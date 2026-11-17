@@ -45,7 +45,7 @@
   nav a:hover{background:rgba(255,255,255,.12)}
   nav a.en{border:2px solid var(--blue);display:flex;align-items:center;gap:6px}
   nav a.en img{width:20px;height:20px;border-radius:50%}
-  @media (max-width:760px){nav a:not(.en){display:none}}
+  @media (max-width:760px){nav a:not(.en):not(.join){display:none}}
 
   /* Topp: senaste filmen + telegram */
   .top{background:var(--black);color:#fff;padding:34px 0 40px}
@@ -204,6 +204,23 @@
   .pagang p{max-width:56ch;margin:10px 0 0;position:relative}
   .pagang .tag{background:var(--yellow);color:var(--black);font-weight:800;font-size:.8rem;padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
 
+  /* Bli medlem */
+  .medlem{background:var(--black);color:#fff;position:relative;overflow:hidden}
+  .medlem::before{content:"";position:absolute;left:-80px;bottom:-120px;width:200px;height:420px;transform:rotate(25deg);background:linear-gradient(90deg,var(--yellow) 0 8px,transparent 8px 22px,var(--teal) 22px 70px,transparent 70px 84px,var(--yellow) 84px 92px,transparent 92px);opacity:.85}
+  .medlem .wrap{position:relative}
+  .medlem h2{color:#fff}
+  .medlem .kicker{color:var(--yellow)}
+  .medlem-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+  .medlem-head p{color:#d9d3c5;font-size:1.1rem;max-width:56ch;margin:0}
+  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:860px){.perks{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.perks{grid-template-columns:1fr}}
+  .perk{background:#1f1f1f;border-radius:var(--radius);padding:20px;border-left:5px solid var(--yellow)}
+  .perk i{font-style:normal;font-size:1.6rem;display:block;margin-bottom:8px}
+  .perk h3{color:#fff;font-size:1.2rem;margin-bottom:4px}
+  .perk p{margin:0;color:#bdb6a6;font-size:.95rem}
+  nav a.join{background:var(--yellow);color:var(--black);font-weight:800}
+  nav a.join:hover{background:#fff35c}
   .lead{font-size:1.15rem;max-width:62ch;margin:0 0 28px}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
   @media (max-width:760px){.stats{grid-template-columns:1fr 1fr}}
@@ -273,6 +290,7 @@
       <a href="#om">Om Alrik</a>
       <a href="#samarbeten">Samarbeten</a>
       <a href="#kontakt">Kontakt</a>
+      <a class="join" href="#medlem">★ Bli medlem</a>
       <a class="en" href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener"><img src="img/logo-alriks-cars.png" alt="">English</a>
     </nav>
   </div>
@@ -397,6 +415,28 @@
         <a class="chan" href="https://www.youtube.com/@alriksbilar" target="_blank" rel="noopener"><img src="img/logo-alriks-bilar.png" alt=""><span>Alriks Bilar<small>På svenska</small></span></a>
         <a class="chan" href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener"><img src="img/logo-alriks-cars.png" alt=""><span>Alriks Cars<small>In English</small></span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLI MEDLEM -->
+<section class="medlem" id="medlem">
+  <div class="wrap">
+    <div class="medlem-head">
+      <div>
+        <div class="kicker">Medlemsklubben</div>
+        <h2>Bli medlem i Alriks Bilar</h2>
+        <p>Över 200 bilentusiaster stöttar redan kanalen som betalande medlemmar – och får lite extra tillbaka. Du gör det möjligt med oberoende biljournalistik, rörligt.</p>
+      </div>
+      <a class="btn yellow big" href="https://www.youtube.com/@alriksbilar/join" target="_blank" rel="noopener">★ Bli medlem på YouTube</a>
+    </div>
+    <div class="perks">
+      <div class="perk"><i>🚫</i><h3>Helt reklamfritt</h3><p>Se filmerna utan avbrott.</p></div>
+      <div class="perk"><i>⏩</i><h3>Filmerna före alla andra</h3><p>Du ser nya filmer tidigare – om det inte är embargo.</p></div>
+      <div class="perk"><i>🎬</i><h3>Över 100 exklusiva videor</h3><p>Filmer som bara medlemmar kan se.</p></div>
+      <div class="perk"><i>💬</i><h3>Prioriterade svar</h3><p>Dina kommentarer och frågor går först.</p></div>
+      <div class="perk"><i>📣</i><h3>Inlägg bara för medlemmar</h3><p>Bakom kulisserna, nyheter och omröstningar.</p></div>
+      <div class="perk"><i>😎</i><h3>Egna emojis och märken</h3><p>Visa att du är med i klubben.</p></div>
     </div>
   </div>
 </section>
