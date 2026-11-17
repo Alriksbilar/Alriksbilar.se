@@ -8,3 +8,7 @@ Hemsidan för YouTube-kanalen Alriks Bilar.
 - `videos.json` – reservlista med filmer (den riktiga listan hämtas från YouTube via `/api/videos`)
 - `netlify/functions/videos.mjs` – hämtar senaste filmerna från YouTube
 - `img/` – bilder och loggor
+
+## Kontaktformulär
+
+Formuläret "kontakt" hanteras av Netlify Forms. Notiser skickas till alrik.soderlind@icloud.com.
