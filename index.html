@@ -448,9 +448,9 @@ function filmCard(v){
   </button>`;
 }
 
-let alla = [];
+let alla = [], arkiv = [];
 function slumpaArkiv(){
-  const aldre = alla.length > 7 ? alla.slice(7) : alla.slice(1);
+  const aldre = arkiv.length ? arkiv : alla.slice(1);
   if (!aldre.length) return;
   const v = aldre[Math.floor(Math.random() * aldre.length)];
   document.getElementById('arkivFilm').innerHTML = filmCard(v);
@@ -458,7 +458,7 @@ function slumpaArkiv(){
 
 function bind(){
   document.querySelectorAll('.film').forEach(b => b.onclick = () => {
-    const v = [...alla, ...eng].find(x => x.id === b.dataset.id); if (v) playInHero(v);
+    const v = [...alla, ...arkiv, ...eng].find(x => x.id === b.dataset.id); if (v) playInHero(v);
   });
 }
 
@@ -468,6 +468,13 @@ async function laddaFilmer(){
   try { const r = await fetch('/api/videos'); if (!r.ok) throw 0; data = await r.json(); if (!data.svenska?.length) throw 0; }
   catch { data = await fetch('videos.json').then(r => r.json()); }
   alla = data.svenska; eng = data.english || [];
+  // Arkivet: filmer utanför de sju senaste + äldre klassiker från videos.json
+  try {
+    const extra = (await fetch('videos.json').then(r => r.json())).svenska || [];
+    const sedda = new Set(alla.slice(0, 7).map(v => v.id));
+    const pool = [...alla.slice(7), ...extra].filter(v => !sedda.has(v.id) && (sedda.add(v.id), true));
+    arkiv = pool;
+  } catch { arkiv = alla.slice(7); }
   const senaste = alla[0];
   // Topp: senaste filmen
   const img = document.getElementById('posterImg');
