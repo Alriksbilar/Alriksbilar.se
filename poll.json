@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-m3",
+  "fraga": "Vilken motorisering skulle det finnas i din nya BMW M3?",
+  "alternativ": [
+    {"kort": "Bensin", "text": "En bensinmotor på ca 550 hk"},
+    {"kort": "El", "text": "Fyra elmotorer på totalt 850 hk, som kan styras individuellt"}
+  ]
+}
