@@ -724,6 +724,7 @@ function visaShorts(lista){
   document.getElementById('shorts').innerHTML = shortsLista.map((v, i) => `
     <button class="short" role="listitem" data-i="${i}" aria-label="Spela: ${esc(v.titel)}">
       <div class="st"><img src="https://i.ytimg.com/vi/${esc(v.id)}/oardefault.jpg" alt="" loading="lazy"
+        onload="if(this.naturalWidth<=120&&!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg'}"
         onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg'}else{this.remove()}">
         <span class="sp"></span><span class="stt">${esc(v.titel)}</span></div>
     </button>`).join('');
