@@ -42,7 +42,11 @@ export default async () => {
     shorts: sv.filter(v => v.shorts).map(({ shorts, ...v }) => v)
   };
   return new Response(JSON.stringify(body), {
-    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=900" }
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "netlify-cdn-cache-control": "public, durable, s-maxage=900, stale-while-revalidate=3600"
+    }
   });
 };
 
