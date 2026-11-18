@@ -130,3 +130,8 @@ section[id],[id]{scroll-margin-top:84px}
 .ls-tumregel b{color:#fff}
 .ls-obs{font-weight:700;color:var(--black)}
 .art .poang{font-family:var(--mono);font-size:.9rem;font-weight:600;background:var(--black);color:var(--yellow);display:inline-block;padding:6px 12px;border-radius:6px;margin:4px 0 10px}
+.galleri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+.galleri figure{margin:0}
+.galleri img{aspect-ratio:16/9;object-fit:cover;width:100%;border-radius:10px}
+.galleri figcaption{font-size:.74rem}
+@media (max-width:700px){.galleri{grid-template-columns:1fr}}
