@@ -8,7 +8,7 @@ const API = "https://www.googleapis.com/youtube/v3";
 const MAX_ALDER_MS = 6 * 60 * 60 * 1000;                      // hämta nytt var 6:e timme
 const SHORTS_MAX_SEK = 180;                                   // shorts är högst 3 minuter
 
-export const nyckel = () => globalThis.Netlify?.env?.get?.("YOUTUBE_API_KEY") || process.env.YOUTUBE_API_KEY;
+export const nyckel = () => (globalThis.Netlify?.env?.get?.("YOUTUBE_API_KEY") || process.env.YOUTUBE_API_KEY || "").trim().replace(/^["']|["']$/g, "") || undefined;
 export const butik = () => getStore({ name: "kanal", consistency: "strong" });
 
 async function yt(path, params, key) {
