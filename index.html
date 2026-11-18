@@ -730,6 +730,17 @@ async function laddaFilmer(){
 document.getElementById('shuffle').onclick = () => { slumpaArkiv(); bind(); };
 laddaFilmer();
 
+/* ---------- Gemensam anmälan till Alriks Bilbrev: MailerLite + reservkopia i Netlify Forms ---------- */
+async function anmalBilbrev(formData){
+  const data = Object.fromEntries(formData.entries());
+  const [ml, nf] = await Promise.allSettled([
+    fetch('/api/prenumerera', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(data)}).then(r => r.ok),
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({...data, 'form-name':'nyhetsbrev', fornamn: data.fornamn || ''}).toString()}).then(r => r.ok)
+  ]);
+  return (ml.status === 'fulfilled' && ml.value) || (nf.status === 'fulfilled' && nf.value);
+}
+
 /* ---------- Nyhetsbrevspuff i filmrutnätet ---------- */
 function brevPuff(){
   return `<form class="puff" name="nyhetsbrev" id="puffForm">
@@ -746,11 +757,9 @@ function kopplaBrevPuff(){
   f.addEventListener('submit', async e => {
     e.preventDefault();
     const msg = f.querySelector('.puff-msg');
-    const data = new URLSearchParams(new FormData(f)); data.set('form-name', 'nyhetsbrev'); data.set('fornamn', '');
     try {
-      const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: data.toString()});
-      if (!r.ok) throw 0;
-      f.reset(); msg.textContent = 'Tack! Du är med på listan.';
+      if (!(await anmalBilbrev(new FormData(f)))) throw 0;
+      f.reset(); msg.textContent = 'Tack! Kolla din inkorg och bekräfta anmälan.';
     } catch { msg.textContent = 'Det gick inte just nu – försök igen strax.'; }
   });
 }
@@ -927,9 +936,8 @@ document.getElementById('brevForm').addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target, msg = document.getElementById('brevMsg');
   try {
-    const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()});
-    if (!r.ok) throw 0;
-    f.reset(); msg.textContent = 'Tack! Du står nu på listan för Alriks Bilbrev.';
+    if (!(await anmalBilbrev(new FormData(f)))) throw 0;
+    f.reset(); msg.textContent = 'Tack! Kolla din inkorg och bekräfta din anmälan till Alriks Bilbrev.';
   } catch {
     msg.textContent = 'Det gick inte att anmäla just nu – försök igen om en stund.';
   }
