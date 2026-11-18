@@ -135,7 +135,9 @@
   .arkiv .btn.line{color:#fff;padding:8px 16px}
   .eng{background:#fff;border-radius:var(--radius);padding:22px;border-top:6px solid var(--blue);display:flex;flex-direction:column;gap:12px}
   .eng .row{display:flex;gap:14px;align-items:center}
-  .eng img{width:64px;height:64px;border-radius:50%}
+  .eng .row img{width:64px;height:64px;border-radius:50%}
+  #engFilm .film{width:100%}
+  .thumb.en{background:repeating-linear-gradient(115deg,var(--blue) 0 46px,var(--black) 46px 60px,var(--yellow) 60px 64px,var(--blue) 64px 120px)}
   .eng h3{font-size:1.4rem}
   .eng p{margin:0;color:var(--muted);font-size:.95rem}
   .eng .btn{background:var(--blue);color:#fff;align-self:flex-start}
@@ -797,9 +799,9 @@ function playInHero(v, autoplay = true){
   }
 }
 
-function filmCard(v){
+function filmCard(v, en){
   return `<button class="film" data-id="${esc(v.id)}">
-    <div class="thumb"><span class="fb"><img src="img/logo-alriks-bilar.png" alt="" style="position:static;width:64px;height:64px;border-radius:50%;box-shadow:0 0 0 3px var(--yellow)"></span>
+    <div class="thumb${en ? ' en' : ''}"><span class="fb"><img src="img/logo-alriks-${en ? 'cars' : 'bilar'}.png" alt="" style="position:static;width:64px;height:64px;border-radius:50%;box-shadow:0 0 0 3px var(--yellow)"></span>
       <img src="${thumb(v.id)}" alt="" loading="lazy" onerror="this.remove()"><span class="mini"></span></div>
     <div class="t">${esc(v.titel)}</div>
     ${v.datum ? `<div class="dt">${fmt(v.datum)}</div>` : ''}
@@ -844,7 +846,7 @@ async function laddaFilmer(){
   document.getElementById('films').innerHTML = alla.slice(1, 6).map(filmCard).join('') + brevPuff();
   kopplaBrevPuff();
   slumpaArkiv();
-  document.getElementById('engFilm').innerHTML = eng.length ? filmCard(eng[0]) : '';
+  document.getElementById('engFilm').innerHTML = eng.length ? filmCard(eng[0], true) : '';
   bind();
   visaShorts(data.shorts || []);
 }
