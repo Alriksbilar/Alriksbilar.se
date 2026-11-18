@@ -16,3 +16,7 @@ Formuläret "kontakt" hanteras av Netlify Forms. Notiser skickas till alrik.sode
 ## Nyhetsbrev
 
 Anmälningar går till MailerLite (gruppen "Alriks Bilbrev") via /api/prenumerera. Kräver miljövariabeln MAILERLITE_TOKEN i Netlify. Reservkopia sparas i Netlify Forms ("nyhetsbrev").
+
+## Topplistor och spellistor
+
+/api/topplistor läser kanalen via YouTube Data API (miljövariabeln YOUTUBE_API_KEY). Funktionen kanal-dagligen sparar visningssiffror varje natt för veckans och månadens mest sedda.
