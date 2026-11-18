@@ -91,6 +91,7 @@
 
   /* Filmrutor */
   .films{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+  .films .puff{align-self:stretch}
   .film{width:100%}
   @media (max-width:860px){.films{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.films{grid-template-columns:1fr}}
@@ -124,6 +125,17 @@
   .eng p{margin:0;color:var(--muted);font-size:.95rem}
   .eng .btn{background:var(--blue);color:#fff;align-self:flex-start}
 
+  .puff{background:var(--yellow);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px;align-self:stretch;min-height:100%;position:relative;overflow:hidden}
+  .puff::after{content:"";position:absolute;right:-30px;top:-20px;width:70px;height:160px;transform:rotate(25deg);background:linear-gradient(90deg,var(--black) 0 10px,transparent 10px 18px,var(--teal) 18px 40px)}
+  .puff-k{font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark)}
+  .puff-h{font-weight:900;font-style:italic;font-size:1.3rem;line-height:1.15;color:var(--black);max-width:15ch}
+  .puff p{margin:0;font-size:.9rem;color:#3d3a33}
+  .puff-row{display:flex;gap:8px;margin-top:auto}
+  .puff-row input{flex:1;min-width:0;font:inherit;padding:10px 12px;border-radius:8px;border:2px solid var(--black);background:#fff}
+  .puff-row .btn{background:var(--black);color:#fff;padding:10px 16px}
+  .puff-ok{display:flex;gap:8px;align-items:center;font-size:.82rem;color:#3d3a33}
+  .puff-ok input{accent-color:var(--black);width:16px;height:16px}
+  .puff .puff-msg{font-weight:800;color:var(--teal-dark);min-height:0}
   /* Shorts */
   .shorts-wrap{margin-top:44px}
   .shorts{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
@@ -708,7 +720,8 @@ async function laddaFilmer(){
   playInHero(senaste, false);
   document.getElementById('poster').onclick = () => playInHero(current);
   // Fler filmer
-  document.getElementById('films').innerHTML = alla.slice(1, 7).map(filmCard).join('');
+  document.getElementById('films').innerHTML = alla.slice(1, 6).map(filmCard).join('') + brevPuff();
+  kopplaBrevPuff();
   slumpaArkiv();
   document.getElementById('engFilm').innerHTML = eng.length ? filmCard(eng[0]) : '';
   bind();
@@ -716,6 +729,31 @@ async function laddaFilmer(){
 }
 document.getElementById('shuffle').onclick = () => { slumpaArkiv(); bind(); };
 laddaFilmer();
+
+/* ---------- Nyhetsbrevspuff i filmrutnätet ---------- */
+function brevPuff(){
+  return `<form class="puff" name="nyhetsbrev" id="puffForm">
+    <div class="puff-k">✉ Alriks Bilbrev</div>
+    <div class="puff-h">Veckans filmer och bilnyheter – direkt i inkorgen</div>
+    <p>En gång i veckan. Gratis. Avsluta när du vill.</p>
+    <div class="puff-row"><input type="email" name="epost" required placeholder="Din e-post" aria-label="Din e-post"><button class="btn" type="submit">Anmäl</button></div>
+    <label class="puff-ok"><input type="checkbox" name="samtycke" value="ja" required> Ja, skicka Alriks Bilbrev till mig</label>
+    <p class="puff-msg" role="status"></p>
+  </form>`;
+}
+function kopplaBrevPuff(){
+  const f = document.getElementById('puffForm'); if (!f) return;
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const msg = f.querySelector('.puff-msg');
+    const data = new URLSearchParams(new FormData(f)); data.set('form-name', 'nyhetsbrev'); data.set('fornamn', '');
+    try {
+      const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: data.toString()});
+      if (!r.ok) throw 0;
+      f.reset(); msg.textContent = 'Tack! Du är med på listan.';
+    } catch { msg.textContent = 'Det gick inte just nu – försök igen strax.'; }
+  });
+}
 
 /* ---------- Shorts: remsa + stående spelare som går vidare automatiskt ---------- */
 let shortsLista = [], spIndex = 0, spPlayer = null, ytKlar = null;
