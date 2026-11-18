@@ -745,6 +745,12 @@
 </div>
 
 <script>
+
+/* ---------- Innehåll som uppdateras utan publicering (läses från GitHub via /api/innehall) ---------- */
+async function hamtaInnehall(fil){
+  try { const r = await fetch('/api/innehall/' + fil); if (r.ok) return r; } catch {}
+  return fetch(fil + '.json', {cache:'no-store'});
+}
 const fmt = d => d ? new Date(d + 'T12:00:00').toLocaleDateString('sv-SE', {day:'numeric', month:'long', year:'numeric'}) : '';
 const fmtKort = d => new Date(d + 'T12:00:00').toLocaleDateString('sv-SE', {day:'numeric', month:'short'}).replace('.', '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -991,7 +997,7 @@ function spelaLista(p){
 })();
 
 /* ---------- Telegram: nyheter.json (uppdateras varje morgon) ---------- */
-fetch('nyheter.json', {cache:'no-store'}).then(r => r.json()).then(data => {
+hamtaInnehall('nyheter').then(r => r.json()).then(data => {
   document.getElementById('tgDate').textContent = fmtKort(data.uppdaterad);
   document.getElementById('news').innerHTML = data.nyheter.map(n => `
     <li>
@@ -1003,7 +1009,7 @@ fetch('nyheter.json', {cache:'no-store'}).then(r => r.json()).then(data => {
 }).catch(() => { document.getElementById('news').innerHTML = '<li class="d">Nyheterna kunde inte laddas.</li>'; });
 
 /* ---------- Podden: podd.json ---------- */
-fetch('podd.json', {cache:'no-store'}).then(r => r.json()).then(p => {
+hamtaInnehall('podd').then(r => r.json()).then(p => {
   const [s, ...aldre] = p.avsnitt;
   document.getElementById('poddBody').innerHTML = `
     <div class="ep-latest">
@@ -1033,7 +1039,7 @@ document.getElementById('kontaktForm').addEventListener('submit', async e => {
 (async () => {
   const body = document.getElementById('pollBody');
   let q;
-  try { q = await fetch('poll.json', {cache:'no-store'}).then(r => r.json()); } catch { body.innerHTML = ''; return; }
+  try { q = await hamtaInnehall('poll').then(r => r.json()); } catch { body.innerHTML = ''; return; }
   document.getElementById('pollFraga').textContent = q.fraga;
   const key = 'rostat-' + q.id;
   const minRost = (() => { try { return localStorage.getItem(key); } catch { return null; } })();

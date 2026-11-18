@@ -20,3 +20,7 @@ Anmälningar går till MailerLite (gruppen "Alriks Bilbrev") via /api/prenumerer
 ## Topplistor och spellistor
 
 /api/topplistor läser kanalen via YouTube Data API (miljövariabeln YOUTUBE_API_KEY). Funktionen kanal-dagligen sparar visningssiffror varje natt för veckans och månadens mest sedda.
+
+## Krediter hos Netlify
+
+Varje publicering kostar krediter. Därför läses `nyheter.json`, `podd.json` och `poll.json` direkt från GitHub via `/api/innehall/<fil>`, och `netlify.toml` hoppar över publicering när bara de filerna (eller README) ändrats. Samla design- och kodändringar i färre publiceringar.
