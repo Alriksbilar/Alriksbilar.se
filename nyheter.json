@@ -1,26 +1,33 @@
 {
-  "uppdaterad": "2026-11-17",
+  "uppdaterad": "2026-11-18",
   "nyheter": [
     {
-      "rubrik": "EU och Storbritannien kan skjuta upp elbilstullen igen",
-      "betyder": "Blir det ingen förlängning kan elbilar som säljs mellan EU och Storbritannien bli 10 procent dyrare från nyår – och det visar hur långt efter Europa ligger med egna batterier.",
-      "kalla": "electrive",
-      "url": "https://www.electrive.com/2026/11/12/eu-and-uk-could-delay-mutual-ev-tariffs-once-more/",
-      "datum": "2026-11-12"
+      "rubrik": "Volvo stryker 2 500 jobb – men elbilsfabriken i Slovakien växer",
+      "betyder": "Volvo krymper i Sverige, där 2 000 av jobben försvinner, medan nästa generations elbilar ska byggas i Košice från 2027 – en tydlig signal om var framtidens tillverkning hamnar.",
+      "kalla": "Carup",
+      "url": "https://carup.se/volvo-sparkar-2500-men-anstaller-1000-tals-till-ny-elbil",
+      "datum": "2026-11-18"
     },
     {
-      "rubrik": "Volvo Cars försäljning fortsätter att falla",
-      "betyder": "Hård konkurrens i Kina och slopade elbilsbidrag i USA slår mot Volvo – samtidigt säljer elbilarna bra i Europa, så hemmamarknaden bär just nu företaget.",
-      "kalla": "WardsAuto",
-      "url": "https://www.wardsauto.com/news/volvo-cars-reports-continuing-sales-slump/873685/",
-      "datum": "2026-11-05"
+      "rubrik": "Moody's sänker Volvo Cars kreditbetyg",
+      "betyder": "Sämre kreditbetyg gör det dyrare för Volvo att låna pengar – och Moody's varnar för att fler besparingar kan behövas.",
+      "kalla": "Carup",
+      "url": "https://carup.se/ny-small-for-volvo-cars-aktien-faller-efter-sankt-kreditbetyg",
+      "datum": "2026-11-16"
     },
     {
-      "rubrik": "Ny EU-uppgörelse sätter tak för kinesiska laddhybrider",
-      "betyder": "Kinesiska hybrider får fortfarande komma in, men i begränsad mängd – det kan dämpa priskriget på laddhybrider i Europa de närmaste åren.",
-      "kalla": "Council on Foreign Relations",
-      "url": "https://www.cfr.org/articles/europes-china-auto-deal",
-      "datum": "2026-11-02"
+      "rubrik": "Elbilstullen mellan EU och Storbritannien avgörs på fredag",
+      "betyder": "Blir det inget uppskov på toppmötet kan de flesta elbilar som säljs mellan EU och Storbritannien få 10 procent tull från nyår – och priserna stiga på båda sidor.",
+      "kalla": "EuropaWire / VDA",
+      "url": "https://news.europawire.eu/vda-urges-eu-and-uk-to-delay-stricter-electric-vehicle-trade-rules-to-protect-automotive-competitiveness/eu-press-release/2026/11/17/19/32/05/188227/",
+      "datum": "2026-11-17"
+    },
+    {
+      "rubrik": "BMW startar serietillverkning av nya batterier för iX5",
+      "betyder": "BMW:s nya batterigeneration för Neue Klasse sprids nu till fler modeller – iX5 är nästa i tur.",
+      "kalla": "MarkLines",
+      "url": "https://www.marklines.com/en/news/354289?rf=latest-contents",
+      "datum": "2026-11-18"
     }
   ]
 }
