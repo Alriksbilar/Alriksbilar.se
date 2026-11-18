@@ -947,7 +947,10 @@ function spelaLista(p){
     document.querySelector('#parlaFilm .film').onclick = () => playInHero(t.parla);
   }
 
-  if (t.spellistor?.length) {
+  // Visa de största spellistorna (minst 5 filmer), utan medlemslistor och shorts
+  t.spellistor = (t.spellistor || []).filter(p => p.antal >= 5 && !/medlem|shorts/i.test(p.titel))
+    .sort((a, b) => b.antal - a.antal).slice(0, 14);
+  if (t.spellistor.length) {
     document.getElementById('spellistorWrap').hidden = false;
     document.getElementById('spellistor').innerHTML = t.spellistor.map((p, i) => `
       <button class="spellista" data-i="${i}">
