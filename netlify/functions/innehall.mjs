@@ -1,7 +1,7 @@
-// /api/innehall/:fil – läser nyheter.json, podd.json och poll.json direkt från GitHub.
+// /api/innehall/:fil – läser nyheter.json, podd.json, poll.json och leasing.json direkt från GitHub.
 // Då syns morgonens Bilnytt, nya poddavsnitt och veckans fråga utan att sajten behöver publiceras om
 // (publiceringar kostar krediter hos Netlify). Faller tillbaka på den publicerade filen om GitHub inte svarar.
-const TILLATNA = new Set(["nyheter", "podd", "poll"]);
+const TILLATNA = new Set(["nyheter", "podd", "poll", "leasing"]);
 const RAW = "https://raw.githubusercontent.com/Alriksbilar/alriksbilar.se/main/";
 
 export default async (req, context) => {

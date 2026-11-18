@@ -103,3 +103,29 @@ section[id],[id]{scroll-margin-top:84px}
 .art-kort .ad{font-family:var(--mono);font-size:.74rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
 .art-kort h3{font-size:1.3rem;margin:6px 0 8px}
 .art-kort p{margin:0;color:var(--ink);font-size:.97rem}
+
+/* Privatleasing */
+.ls-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.ls-chips button{font:inherit;font-weight:700;border:2px solid var(--black);background:transparent;border-radius:999px;padding:7px 16px;cursor:pointer}
+.ls-chips button.on{background:var(--black);color:var(--yellow)}
+.ls-lista{list-style:none;margin:0;padding:0;counter-reset:ls;display:grid;gap:12px}
+.ls-rad{counter-increment:ls;display:grid;grid-template-columns:48px minmax(0,2.2fr) repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:14px;align-items:center;background:#fff;border-radius:var(--radius);padding:16px 18px;box-shadow:0 0 0 1px var(--line)}
+.ls-rad::before{content:counter(ls);font-weight:900;font-style:italic;font-size:1.7rem;color:var(--teal)}
+.ls-bil b{display:block;font-size:1.12rem;color:var(--black)}
+.ls-bil small{display:block;color:var(--muted);font-size:.85rem}
+.ls-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;background:var(--cream);margin-top:4px}
+.ls-tag.el{background:#d9efe9;color:var(--teal-dark)}
+.ls-tal{font-weight:800;font-size:1.15rem;color:var(--black);line-height:1.2}
+.ls-tal small{display:block;font-family:var(--mono);font-size:.68rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.ls-tal .ann{font-size:.8rem;font-weight:600;color:var(--muted)}
+.ls-tal.ok{color:var(--teal)}.ls-tal.over{color:#c0392b}
+.ls-ing{font-size:.82rem;line-height:1.6}
+.ls-ing span{display:block}.ls-ing .ja::before{content:"✓ ";color:var(--teal);font-weight:900}.ls-ing .nej{color:var(--muted)}.ls-ing .nej::before{content:"– "}
+.ls-ing a{font-weight:700;color:var(--teal)}
+.ls-tom{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:0 0 0 1px var(--line);font-weight:600}
+@media (max-width:900px){.ls-rad{grid-template-columns:40px 1fr 1fr;}.ls-bil{grid-column:2/-1}.ls-rad::before{grid-row:span 3;align-self:start}.ls-ing{grid-column:2/-1}}
+.ls-forklaring{margin-top:44px;max-width:760px}
+.ls-forklaring h2{font-size:1.6rem;margin:0 0 12px}
+.ls-tumregel{background:var(--black);color:#eee;border-radius:var(--radius);padding:20px 22px;margin:22px 0;border-left:8px solid var(--yellow);font-size:1.05rem}
+.ls-tumregel b{color:#fff}
+.ls-obs{font-weight:700;color:var(--black)}
