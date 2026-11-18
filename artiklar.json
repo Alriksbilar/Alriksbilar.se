@@ -1,6 +1,15 @@
 {
   "artiklar": [
     {
+      "slug": "bmw-i3-provkorning",
+      "rubrik": "Nya BMW i3 – mer BMW än bensinbilen?",
+      "ingress": "40 mil längre räckvidd än i4 M50 och dubbla laddeffekten. Jag körde också bensinsyskonet M350 – och blev överraskad.",
+      "datum": "2026-11-18",
+      "kategori": "Provkörning",
+      "bild": "/img/artiklar/bmw-i3-provkorning/hero.jpg",
+      "film": "kgqrWRnAudM"
+    },
+    {
       "slug": "trippeltest-ex60-ix3-glc",
       "rubrik": "Trippeltest: Volvo EX60 mot BMW iX3 och Mercedes GLC",
       "ingress": "Tre nya premiumelbilar i sex ronder. Volvo laddar snabbast och åker skönast – men räckvidden avgör.",
