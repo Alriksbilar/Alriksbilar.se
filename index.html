@@ -397,6 +397,23 @@
   .social a:hover{background:var(--teal)}
   .social svg{width:18px;height:18px;fill:currentColor}
   footer small{color:#999}
+  section[id],#top,#nyheter,#shortsWrap,#spellistorWrap,#parla{scroll-margin-top:84px}
+  /* Artiklar */
+  .artiklar{padding:10px 0 50px}
+  .art-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .art-head h2{margin:0}
+  .art-head a{font-weight:800;color:var(--teal);text-decoration:none}
+  .art-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+  .art-kort{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:#fff;border-radius:var(--radius);overflow:hidden;text-decoration:none;box-shadow:0 0 0 1px var(--line);transition:transform .15s}
+  .art-lista.en .art-kort{grid-column:1/-1}
+  @media (max-width:760px){.art-kort{grid-template-columns:1fr}}
+  .art-kort:hover{transform:translateY(-3px)}
+  .art-kort img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+  .art-kort .ak{padding:22px 24px;align-self:center}
+  .art-kort .ad{font-family:var(--mono);font-size:.74rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
+  .art-kort h3{font-size:1.6rem;margin:6px 0 10px}
+  .art-kort p{margin:0 0 12px}
+  .art-kort .las{font-weight:800;color:var(--teal)}
 </style>
 </head>
 <body>
@@ -406,6 +423,7 @@
     <a class="brand" href="#top"><img src="img/logo-alriks-bilar.png" alt="Alriks Bilar"><span>Alriks Bilar</span></a>
     <nav aria-label="Huvudmeny">
       <a class="nl" href="/#filmer">Filmer</a>
+      <a class="nl" href="/artiklar/">Artiklar</a>
       <a class="nl" href="/#podd">Podden</a>
       <a class="nl" href="/#samarbeten">Samarbeten</a>
       <a class="join" href="/#medlem">★ Bli medlem</a>
@@ -417,7 +435,7 @@
     <div class="wrap meny-grid">
       <div><div class="mh">Titta</div><a href="/#filmer">Senaste filmerna</a><a href="/#shortsWrap">Shorts</a><a href="/#topp">Topplistan</a><a href="/#spellistorWrap">Spellistor</a></div>
       <div><div class="mh">Var med</div><a href="/#fragan">Veckans fråga</a><a href="/#fragan">Fråga podden</a><a href="/#nyhetsbrev">Nyhetsbrevet</a><a href="/#medlem">Bli medlem</a></div>
-      <div><div class="mh">Lyssna &amp; läs</div><a href="/#podd">Podden Varför? – Därför!</a><a href="/#nyheter">Bilnytt</a></div>
+      <div><div class="mh">Lyssna &amp; läs</div><a href="/artiklar/">Artiklar</a><a href="/#podd">Podden Varför? – Därför!</a><a href="/#nyheter">Bilnytt</a></div>
       <div><div class="mh">Alrik</div><a href="/#om">Om Alrik</a><a href="/#samarbeten">Samarbeten</a><a href="/#kontakt">Kontakt</a><a href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener">Alriks Cars – in English</a></div>
     </div>
   </div>
@@ -488,6 +506,14 @@
 </section>
 
 <!-- TOPPLISTOR + SPELLISTOR -->
+<!-- ARTIKLAR -->
+<section class="artiklar" id="artiklar" hidden>
+  <div class="wrap">
+    <div class="art-head"><div><div class="kicker">Läs</div><h2>Senaste artiklarna</h2></div><a href="/artiklar/">Alla artiklar →</a></div>
+    <div class="art-lista" id="artLista"></div>
+  </div>
+</section>
+
 <section class="topp" id="topp" hidden>
   <div class="wrap">
     <div class="topp-grid">
@@ -986,6 +1012,20 @@ function spelaLista(p){
     document.querySelectorAll('.spellista').forEach(b => b.onclick = () => spelaLista(t.spellistor[Number(b.dataset.i)]));
   }
 })();
+
+/* ---------- Artiklar: artiklar.json ---------- */
+fetch('/artiklar.json').then(r => r.json()).then(d => {
+  const a = d.artiklar.slice(0, 3);
+  if (!a.length) return;
+  const l = document.getElementById('artLista');
+  l.classList.toggle('en', a.length === 1);
+  l.innerHTML = a.map(x => `
+    <a class="art-kort" href="/artiklar/${esc(x.slug)}/">
+      <img src="${esc(x.bild)}" alt="" loading="lazy">
+      <div class="ak"><div class="ad">${new Date(x.datum).toLocaleDateString('sv-SE',{day:'numeric',month:'long'})} · ${esc(x.kategori)}</div><h3>${esc(x.rubrik)}</h3><p>${esc(x.ingress)}</p><span class="las">Läs artikeln →</span></div>
+    </a>`).join('');
+  document.getElementById('artiklar').hidden = false;
+}).catch(() => {});
 
 /* ---------- Menyknappen ---------- */
 (() => {
