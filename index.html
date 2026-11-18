@@ -37,19 +37,34 @@
 
   /* Header */
   header{position:sticky;top:0;z-index:20;background:var(--black);color:#fff;border-bottom:3px solid var(--yellow)}
-  header .wrap{display:flex;align-items:center;gap:16px;height:66px}
+  header > .wrap{display:flex;align-items:center;gap:16px;height:66px}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
   .brand img{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 3px var(--yellow)}
   .brand span{font-weight:900;font-style:italic;font-size:1.25rem}
   nav{margin-left:auto;display:flex;gap:4px;align-items:center}
-  nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:999px}
+  nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:999px;white-space:nowrap}
   nav a:hover{background:rgba(255,255,255,.12)}
-  nav a.en{border:2px solid var(--blue);display:flex;align-items:center;gap:6px}
-  nav a.en img{width:20px;height:20px;border-radius:50%}
-  nav a,.brand span{white-space:nowrap}
-  @media (max-width:1180px){nav a.mid{display:none}}
-  @media (max-width:860px){nav a:not(.en):not(.join){display:none}}
-
+  nav a.join{background:var(--yellow);color:var(--black);font-weight:800;margin-left:6px}
+  nav a.join:hover{background:#fff35c}
+  nav a.en{border:2px solid var(--blue);display:flex;align-items:center;gap:6px;padding:5px 10px 5px 6px}
+  nav a.en img{width:22px;height:22px;border-radius:50%}
+  .menyknapp{font:inherit;font-weight:700;color:#fff;background:transparent;border:2px solid #444;border-radius:999px;padding:7px 14px 7px 12px;display:flex;align-items:center;gap:8px;cursor:pointer;margin-left:4px}
+  .menyknapp:hover,.menyknapp[aria-expanded="true"]{border-color:var(--yellow)}
+  .burger,.burger::before,.burger::after{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:.2s}
+  .burger::before,.burger::after{content:"";position:absolute;left:0}
+  .burger::before{top:-5px}.burger::after{top:5px}
+  .menyknapp[aria-expanded="true"] .burger{background:transparent}
+  .menyknapp[aria-expanded="true"] .burger::before{top:0;transform:rotate(45deg)}
+  .menyknapp[aria-expanded="true"] .burger::after{top:0;transform:rotate(-45deg)}
+  .meny-panel{background:#1b1b1b;border-top:1px solid #2c2c2c;padding:22px 0 26px}
+  .meny-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  @media (max-width:760px){.meny-grid{grid-template-columns:1fr 1fr}}
+  .meny-grid .mh{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
+  .meny-grid a{display:block;text-decoration:none;color:#eee;font-weight:600;padding:6px 0}
+  .meny-grid a:hover{color:var(--yellow)}
+  @media (max-width:1000px){nav a.nl{display:none}}
+  @media (max-width:640px){nav a.en span,.menyknapp .mt{display:none}.menyknapp{padding:9px 11px}}
+  @media (max-width:420px){.brand span{display:none}}
   /* Topp: senaste filmen + telegram */
   .top{background:var(--black);color:#fff;padding:34px 0 40px}
   .top-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
@@ -389,17 +404,22 @@
 <header>
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/logo-alriks-bilar.png" alt="Alriks Bilar"><span>Alriks Bilar</span></a>
-    <nav>
-      <a href="#filmer">Filmer</a>
-      <a class="mid" href="#topp">Topplistan</a>
-      <a class="mid" href="#fragan">Veckans fråga</a>
-      <a class="mid" href="#podd">Podden</a>
-      <a class="mid" href="#om">Om Alrik</a>
-      <a href="#samarbeten">Samarbeten</a>
-      <a href="#kontakt">Kontakt</a>
-      <a class="join" href="#medlem">★ Bli medlem</a>
-      <a class="en" href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener"><img src="img/logo-alriks-cars.png" alt="">English</a>
+    <nav aria-label="Huvudmeny">
+      <a class="nl" href="/#filmer">Filmer</a>
+      <a class="nl" href="/#podd">Podden</a>
+      <a class="nl" href="/#samarbeten">Samarbeten</a>
+      <a class="join" href="/#medlem">★ Bli medlem</a>
+      <a class="en" href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener" title="Alriks Cars – in English"><img src="img/logo-alriks-cars.png" alt=""><span>EN</span></a>
+      <button class="menyknapp" id="menyKnapp" aria-expanded="false" aria-controls="menyPanel"><span class="burger" aria-hidden="true"></span><span class="mt">Meny</span></button>
     </nav>
+  </div>
+  <div class="meny-panel" id="menyPanel" hidden>
+    <div class="wrap meny-grid">
+      <div><div class="mh">Titta</div><a href="/#filmer">Senaste filmerna</a><a href="/#shortsWrap">Shorts</a><a href="/#topp">Topplistan</a><a href="/#spellistorWrap">Spellistor</a></div>
+      <div><div class="mh">Var med</div><a href="/#fragan">Veckans fråga</a><a href="/#fragan">Fråga podden</a><a href="/#nyhetsbrev">Nyhetsbrevet</a><a href="/#medlem">Bli medlem</a></div>
+      <div><div class="mh">Lyssna &amp; läs</div><a href="/#podd">Podden Varför? – Därför!</a><a href="/#nyheter">Bilnytt</a></div>
+      <div><div class="mh">Alrik</div><a href="/#om">Om Alrik</a><a href="/#samarbeten">Samarbeten</a><a href="/#kontakt">Kontakt</a><a href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener">Alriks Cars – in English</a></div>
+    </div>
   </div>
 </header>
 
@@ -959,6 +979,15 @@ function spelaLista(p){
       </button>`).join('');
     document.querySelectorAll('.spellista').forEach(b => b.onclick = () => spelaLista(t.spellistor[Number(b.dataset.i)]));
   }
+})();
+
+/* ---------- Menyknappen ---------- */
+(() => {
+  const k = document.getElementById('menyKnapp'), p = document.getElementById('menyPanel');
+  const satt = o => { p.hidden = !o; k.setAttribute('aria-expanded', o); };
+  k.onclick = () => satt(p.hidden);
+  p.addEventListener('click', e => { if (e.target.closest('a')) satt(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') satt(false); });
 })();
 
 /* ---------- Telegram: nyheter.json (uppdateras varje morgon) ---------- */
