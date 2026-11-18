@@ -12,3 +12,7 @@ Hemsidan för YouTube-kanalen Alriks Bilar.
 ## Kontaktformulär
 
 Formuläret "kontakt" hanteras av Netlify Forms. Notiser skickas till alrik.soderlind@icloud.com.
+
+## Nyhetsbrev
+
+Anmälningar går till MailerLite (gruppen "Alriks Bilbrev") via /api/prenumerera. Kräver miljövariabeln MAILERLITE_TOKEN i Netlify. Reservkopia sparas i Netlify Forms ("nyhetsbrev").
