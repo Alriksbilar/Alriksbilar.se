@@ -129,3 +129,4 @@ section[id],[id]{scroll-margin-top:84px}
 .ls-tumregel{background:var(--black);color:#eee;border-radius:var(--radius);padding:20px 22px;margin:22px 0;border-left:8px solid var(--yellow);font-size:1.05rem}
 .ls-tumregel b{color:#fff}
 .ls-obs{font-weight:700;color:var(--black)}
+.art .poang{font-family:var(--mono);font-size:.9rem;font-weight:600;background:var(--black);color:var(--yellow);display:inline-block;padding:6px 12px;border-radius:6px;margin:4px 0 10px}

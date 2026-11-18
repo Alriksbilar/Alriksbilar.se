@@ -1,6 +1,15 @@
 {
   "artiklar": [
     {
+      "slug": "trippeltest-laddhybrider",
+      "rubrik": "Trippeltest: Skoda Kodiaq mot Toyota RAV4 och Leapmotor C10",
+      "ingress": "Tre superladdhybrider som går 11–14 mil på el möts i sex ronder. En vinner med bred marginal – men är en elbil ändå billigare?",
+      "datum": "2026-11-18",
+      "kategori": "Trippeltest",
+      "bild": "https://i.ytimg.com/vi/Fh7CuwugaUI/maxresdefault.jpg",
+      "film": "Fh7CuwugaUI"
+    },
+    {
       "slug": "bmw-m3-elektrisk",
       "rubrik": "En äkta M3 – utan bensin?",
       "ingress": "850 hk, fyra elmotorer och snabbare än bensin-M3:an runt banan. Jag har kört nya eldrivna M3 – 40 år efter den första.",
