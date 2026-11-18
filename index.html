@@ -46,7 +46,9 @@
   nav a:hover{background:rgba(255,255,255,.12)}
   nav a.en{border:2px solid var(--blue);display:flex;align-items:center;gap:6px}
   nav a.en img{width:20px;height:20px;border-radius:50%}
-  @media (max-width:760px){nav a:not(.en):not(.join){display:none}}
+  nav a,.brand span{white-space:nowrap}
+  @media (max-width:1180px){nav a.mid{display:none}}
+  @media (max-width:860px){nav a:not(.en):not(.join){display:none}}
 
   /* Topp: senaste filmen + telegram */
   .top{background:var(--black);color:#fff;padding:34px 0 40px}
@@ -338,9 +340,9 @@
     <a class="brand" href="#top"><img src="img/logo-alriks-bilar.png" alt="Alriks Bilar"><span>Alriks Bilar</span></a>
     <nav>
       <a href="#filmer">Filmer</a>
-      <a href="#fragan">Veckans fråga</a>
-      <a href="#podd">Podden</a>
-      <a href="#om">Om Alrik</a>
+      <a class="mid" href="#fragan">Veckans fråga</a>
+      <a class="mid" href="#podd">Podden</a>
+      <a class="mid" href="#om">Om Alrik</a>
       <a href="#samarbeten">Samarbeten</a>
       <a href="#kontakt">Kontakt</a>
       <a class="join" href="#medlem">★ Bli medlem</a>
