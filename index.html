@@ -16,6 +16,7 @@
     --radius:14px; --mono:"IBM Plex Mono",ui-monospace,monospace;
   }
   *{box-sizing:border-box}
+  [hidden]{display:none!important}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:Archivo,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
   img{max-width:100%;display:block}
@@ -121,6 +122,34 @@
   .eng p{margin:0;color:var(--muted);font-size:.95rem}
   .eng .btn{background:var(--blue);color:#fff;align-self:flex-start}
 
+  /* Shorts */
+  .shorts-wrap{margin-top:44px}
+  .shorts{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
+  .short{all:unset;cursor:pointer;flex:0 0 168px;scroll-snap-align:start}
+  .short .st{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:repeating-linear-gradient(115deg,var(--teal) 0 46px,var(--black) 46px 60px,var(--yellow) 60px 64px,var(--teal) 64px 120px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .short .st img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .short .st::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.75))}
+  .short .stt{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff;font-weight:800;font-size:.86rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .short .sp{position:absolute;top:10px;right:10px;z-index:1;width:30px;height:30px;border-radius:50%;background:var(--yellow);display:grid;place-items:center}
+  .short .sp::after{content:"";border-left:10px solid var(--black);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+  .short:hover .st{transform:translateY(-3px)}
+  .short .st{transition:transform .15s}
+  .short:focus-visible .st{outline:3px solid var(--yellow);outline-offset:3px}
+  @media (max-width:520px){.short{flex-basis:44vw}}
+  .sp-modal{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.94);display:flex;align-items:center;justify-content:center;gap:18px;padding:20px}
+  .sp-modal[hidden]{display:none}
+  .sp-col{display:flex;flex-direction:column;align-items:center;gap:12px;max-height:100%}
+  .sp-stage{height:min(78vh,calc((100vw - 140px) * 16 / 9));aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000}
+  .sp-stage iframe,#spPlayer{width:100%;height:100%;border:0;display:block}
+  .sp-info{width:100%;max-width:min(78vh * 9 / 16, 440px);color:#fff}
+  .sp-t{font-weight:800;line-height:1.3;margin-bottom:8px}
+  .sp-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .sp-count{font-family:var(--mono);font-size:.75rem;color:#aaa}
+  .sp-row .btn{padding:8px 14px;font-size:.88rem}
+  .sp-nav,.sp-close{all:unset;cursor:pointer;color:#fff;background:rgba(255,255,255,.12);border-radius:50%;width:48px;height:48px;display:grid;place-items:center;font-size:2rem;line-height:1}
+  .sp-nav:hover,.sp-close:hover{background:var(--yellow);color:var(--black)}
+  .sp-close{position:absolute;top:16px;right:16px;font-size:1.2rem;width:42px;height:42px}
+  @media (max-width:600px){.sp-nav{position:absolute;bottom:20px}.sp-nav.prev{left:20px}.sp-nav.next{right:20px}.sp-stage{height:70vh}}
   /* Veckans fråga + Fråga podden */
   .interakt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .interakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -276,6 +305,23 @@
   .form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--yellow);border-color:transparent}
   .form button{justify-self:start}
   .form-msg{margin:0;font-size:.95rem;color:var(--yellow)}
+  /* Nyhetsbrev */
+  .brev{background:var(--yellow);color:var(--black)}
+  .brev .kicker{color:var(--teal-dark)}
+  .brev-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+  @media (max-width:860px){.brev-grid{grid-template-columns:1fr}}
+  .brev p{font-size:1.06rem;max-width:48ch;margin:0}
+  .brev-form{display:grid;gap:14px;background:var(--black);color:#fff;border-radius:var(--radius);padding:24px}
+  .brev-row{display:grid;grid-template-columns:1fr 1.4fr;gap:12px}
+  @media (max-width:520px){.brev-row{grid-template-columns:1fr}}
+  .brev-form label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+  .brev-form label small{font-weight:400;color:#aaa}
+  .brev-form input:not([type=checkbox]){font:inherit;padding:11px 12px;border-radius:8px;border:1px solid #3a3a3a;background:#111;color:#fff}
+  .brev-form input:focus{outline:2px solid var(--yellow);border-color:transparent}
+  .brev-form .brev-ok{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.88rem;color:#d9d3c5;line-height:1.4}
+  .brev-ok input{margin-top:3px;accent-color:var(--yellow);width:18px;height:18px;flex:none}
+  .brev-form .btn{background:var(--yellow);color:var(--black);justify-self:start}
+  .brev-form .form-msg{margin:0;color:var(--yellow);font-weight:700}
   footer{background:var(--black);color:#ddd;padding:40px 0 30px}
   footer .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
   .social{display:flex;gap:10px;flex-wrap:wrap}
@@ -339,6 +385,14 @@
       <a href="https://www.youtube.com/@alriksbilar/videos" target="_blank" rel="noopener">Alla filmer på YouTube →</a>
     </div>
     <div class="films" id="films"></div>
+
+    <div class="shorts-wrap" id="shortsWrap" hidden>
+      <div class="head-row">
+        <div><div class="kicker">Snabba klipp</div><h2>Shorts</h2></div>
+        <a href="https://www.youtube.com/@alriksbilar/shorts" target="_blank" rel="noopener">Alla shorts på YouTube →</a>
+      </div>
+      <div class="shorts" id="shorts" role="list"></div>
+    </div>
 
     <div class="duo">
       <div class="arkiv">
@@ -538,6 +592,28 @@
   </div>
 </section>
 
+<!-- NYHETSBREV -->
+<section class="brev" id="nyhetsbrev">
+  <div class="wrap brev-grid">
+    <div>
+      <div class="kicker">Nyhetsbrev</div>
+      <h2>Få Alriks Bilbrev – en gång i veckan</h2>
+      <p>Veckans filmer, de viktigaste bilnyheterna och vad de betyder, resultatet av veckans fråga – och lite bakom kulisserna. Gratis, och du kan avsluta när du vill.</p>
+    </div>
+    <form class="brev-form" name="nyhetsbrev" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="brevForm">
+      <input type="hidden" name="form-name" value="nyhetsbrev">
+      <p hidden><label>Lämna tomt: <input name="bot-field"></label></p>
+      <div class="brev-row">
+        <label><span>Förnamn <small>(valfritt)</small></span><input name="fornamn" autocomplete="given-name"></label>
+        <label><span>E-post</span><input name="epost" type="email" required autocomplete="email" placeholder="namn@exempel.se"></label>
+      </div>
+      <label class="brev-ok"><input type="checkbox" name="samtycke" value="ja" required> Ja, jag vill få Alriks Bilbrev via e-post. Min adress används bara till nyhetsbrevet och jag kan avsluta när som helst.</label>
+      <button class="btn" type="submit">Prenumerera</button>
+      <p class="form-msg" id="brevMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
 <div class="stripes"></div>
 <footer>
   <div class="wrap">
@@ -551,6 +627,19 @@
     <small>© <span id="yr">2026</span> Alriks Bilar</small>
   </div>
 </footer>
+
+<div class="sp-modal" id="spModal" hidden role="dialog" aria-modal="true" aria-label="Shorts-spelare">
+  <button class="sp-close" id="spClose" aria-label="Stäng">✕</button>
+  <button class="sp-nav prev" id="spPrev" aria-label="Föregående">‹</button>
+  <div class="sp-col">
+    <div class="sp-stage"><div id="spPlayer"></div></div>
+    <div class="sp-info">
+      <div class="sp-t" id="spTitle"></div>
+      <div class="sp-row"><span class="sp-count" id="spCount"></span><button class="btn yellow" id="spHela" hidden>Se hela filmen →</button></div>
+    </div>
+  </div>
+  <button class="sp-nav next" id="spNext" aria-label="Nästa">›</button>
+</div>
 
 <script>
 const fmt = d => d ? new Date(d + 'T12:00:00').toLocaleDateString('sv-SE', {day:'numeric', month:'long', year:'numeric'}) : '';
@@ -621,9 +710,77 @@ async function laddaFilmer(){
   slumpaArkiv();
   document.getElementById('engFilm').innerHTML = eng.length ? filmCard(eng[0]) : '';
   bind();
+  visaShorts(data.shorts || []);
 }
 document.getElementById('shuffle').onclick = () => { slumpaArkiv(); bind(); };
 laddaFilmer();
+
+/* ---------- Shorts: remsa + stående spelare som går vidare automatiskt ---------- */
+let shortsLista = [], spIndex = 0, spPlayer = null, ytKlar = null;
+function visaShorts(lista){
+  shortsLista = lista.slice(0, 15);
+  if (!shortsLista.length) return;
+  document.getElementById('shortsWrap').hidden = false;
+  document.getElementById('shorts').innerHTML = shortsLista.map((v, i) => `
+    <button class="short" role="listitem" data-i="${i}" aria-label="Spela: ${esc(v.titel)}">
+      <div class="st"><img src="https://i.ytimg.com/vi/${esc(v.id)}/oardefault.jpg" alt="" loading="lazy"
+        onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg'}else{this.remove()}">
+        <span class="sp"></span><span class="stt">${esc(v.titel)}</span></div>
+    </button>`).join('');
+  document.querySelectorAll('.short').forEach(b => b.onclick = () => oppnaShort(Number(b.dataset.i)));
+}
+function laddaYT(){
+  if (ytKlar) return ytKlar;
+  ytKlar = new Promise(res => {
+    window.onYouTubeIframeAPIReady = res;
+    const t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+  });
+  return ytKlar;
+}
+function uppdateraInfo(){
+  const v = shortsLista[spIndex];
+  document.getElementById('spTitle').textContent = v.titel;
+  document.getElementById('spCount').textContent = `${spIndex + 1} / ${shortsLista.length}`;
+  const hela = document.getElementById('spHela');
+  hela.hidden = !v.hela;
+  hela.onclick = () => {
+    stangShort();
+    const film = [...alla, ...arkiv].find(x => x.id === v.hela) || {id: v.hela, titel: v.titel.replace(/#\S+/g, '').trim(), datum: ''};
+    playInHero(film);
+  };
+}
+async function oppnaShort(i){
+  spIndex = i;
+  const modal = document.getElementById('spModal');
+  modal.hidden = false; document.body.style.overflow = 'hidden';
+  uppdateraInfo();
+  await laddaYT();
+  if (spPlayer) { spPlayer.loadVideoById(shortsLista[spIndex].id); return; }
+  spPlayer = new YT.Player('spPlayer', {
+    videoId: shortsLista[spIndex].id, host: 'https://www.youtube-nocookie.com',
+    playerVars: {autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1},
+    events: {onStateChange: e => { if (e.data === YT.PlayerState.ENDED) bytShort(1); }}
+  });
+}
+function bytShort(steg){
+  spIndex = (spIndex + steg + shortsLista.length) % shortsLista.length;
+  uppdateraInfo();
+  if (spPlayer?.loadVideoById) spPlayer.loadVideoById(shortsLista[spIndex].id);
+}
+function stangShort(){
+  document.getElementById('spModal').hidden = true; document.body.style.overflow = '';
+  if (spPlayer?.pauseVideo) spPlayer.pauseVideo();
+}
+document.getElementById('spNext').onclick = () => bytShort(1);
+document.getElementById('spPrev').onclick = () => bytShort(-1);
+document.getElementById('spClose').onclick = stangShort;
+document.getElementById('spModal').addEventListener('click', e => { if (e.target.id === 'spModal') stangShort(); });
+document.addEventListener('keydown', e => {
+  if (document.getElementById('spModal').hidden) return;
+  if (e.key === 'Escape') stangShort();
+  if (e.key === 'ArrowRight') bytShort(1);
+  if (e.key === 'ArrowLeft') bytShort(-1);
+});
 
 /* ---------- Telegram: nyheter.json (uppdateras varje morgon) ---------- */
 fetch('nyheter.json', {cache:'no-store'}).then(r => r.json()).then(data => {
@@ -721,6 +878,19 @@ document.getElementById('askForm').addEventListener('submit', async e => {
     f.reset(); msg.textContent = 'Tack! Vi har fått det – håll utkik i podden och på kanalen.';
   } catch {
     msg.textContent = 'Det gick inte att skicka just nu. Mejla gärna: alrik.soderlind@icloud.com';
+  }
+});
+
+/* ---------- Nyhetsbrev (Netlify Forms) ---------- */
+document.getElementById('brevForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, msg = document.getElementById('brevMsg');
+  try {
+    const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()});
+    if (!r.ok) throw 0;
+    f.reset(); msg.textContent = 'Tack! Du står nu på listan för Alriks Bilbrev.';
+  } catch {
+    msg.textContent = 'Det gick inte att anmäla just nu – försök igen om en stund.';
   }
 });
 
