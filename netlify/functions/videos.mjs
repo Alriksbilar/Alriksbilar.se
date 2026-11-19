@@ -15,8 +15,9 @@ function helaFilmen(beskrivning, egetId) {
   return m || null;
 }
 
-async function hamta(kanalId) {
-  const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${kanalId}`);
+async function hamta(kanalId, typ = "channel_id") {
+  const res = await fetch(`https://www.youtube.com/feeds/videos.xml?${typ}=${kanalId}`).catch(() => null);
+  if (!res) return [];
   if (!res.ok) return [];
   const xml = await res.text();
   return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => {
@@ -33,12 +34,22 @@ async function hamta(kanalId) {
 }
 
 export default async () => {
-  const [sv, en] = await Promise.all([hamta(KANALER.svenska), hamta(KANALER.english)]);
+  // Kanalflödet har bara de 15 senaste uppladdningarna – shorts inräknade. Spellistan "UULF…"
+  // innehåller enbart långa filmer, så den ger 15 senaste riktiga filmer oavsett hur många shorts som läggs upp.
+  const lang = id => hamta("UULF" + id.slice(2), "playlist_id");
+  const [sv, en, svLang, enLang] = await Promise.all([
+    hamta(KANALER.svenska), hamta(KANALER.english), lang(KANALER.svenska), lang(KANALER.english)
+  ]);
   const utan = ({ shorts, hela, ...v }) => v;
+  const filmer = (flode, langa) => {
+    const set = new Set(); const ut = [];
+    for (const v of [...flode.filter(v => !v.shorts), ...langa]) if (!set.has(v.id)) { set.add(v.id); ut.push(utan(v)); }
+    return ut.sort((a, b) => (b.datum || "").localeCompare(a.datum || ""));
+  };
   const body = {
     kalla: "youtube",
-    svenska: sv.filter(v => !v.shorts).map(utan),
-    english: en.filter(v => !v.shorts).map(utan),
+    svenska: filmer(sv, svLang),
+    english: filmer(en, enLang),
     shorts: sv.filter(v => v.shorts).map(({ shorts, ...v }) => v)
   };
   return new Response(JSON.stringify(body), {
