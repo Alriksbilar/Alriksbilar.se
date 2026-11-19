@@ -1,33 +1,26 @@
 {
-  "uppdaterad": "2026-11-18",
+  "uppdaterad": "2026-11-19",
   "nyheter": [
     {
-      "rubrik": "Volvo stryker 2 500 jobb – men elbilsfabriken i Slovakien växer",
-      "betyder": "Volvo krymper i Sverige, där 2 000 av jobben försvinner, medan nästa generations elbilar ska byggas i Košice från 2027 – en tydlig signal om var framtidens tillverkning hamnar.",
+      "rubrik": "USA granskar Mercedes kinesiska ägare – Volvo kan ligga ännu värre till",
+      "betyder": "Med Geely som ägare till nästan 80 procent är Volvo betydligt mer utsatt än Mercedes om USA stänger dörren för kinesiskt ägda bilmärken – och USA är en av Volvos viktigaste marknader.",
       "kalla": "Carup",
-      "url": "https://carup.se/volvo-sparkar-2500-men-anstaller-1000-tals-till-ny-elbil",
+      "url": "https://carup.se/usa-vill-stoppa-kinesiskt-agda-bilar-volvo-i-farozonen/",
+      "datum": "2026-11-19"
+    },
+    {
+      "rubrik": "Biltillverkarna kräver elbilsbesked inför fredagens EU–UK-möte",
+      "betyder": "Enligt branschen klarar inte ens var fjärde elbil eller laddhybrid kraven nästa år, så uteblir ett uppskov på fredag riskerar bilar från europeiska fabriker att bli dyrare i Storbritannien – och tvärtom.",
+      "kalla": "EuropaWire (ACEA/SMMT)",
+      "url": "https://news.europawire.eu/acea-and-smmt-call-for-eu-uk-summit-deal-to-protect-e80-billion-automotive-trade-from-new-barriers/eu-press-release/2026/11/18/16/44/11/188475/",
       "datum": "2026-11-18"
     },
     {
-      "rubrik": "Moody's sänker Volvo Cars kreditbetyg",
-      "betyder": "Sämre kreditbetyg gör det dyrare för Volvo att låna pengar – och Moody's varnar för att fler besparingar kan behövas.",
-      "kalla": "Carup",
-      "url": "https://carup.se/ny-small-for-volvo-cars-aktien-faller-efter-sankt-kreditbetyg",
-      "datum": "2026-11-16"
-    },
-    {
-      "rubrik": "Elbilstullen mellan EU och Storbritannien avgörs på fredag",
-      "betyder": "Blir det inget uppskov på toppmötet kan de flesta elbilar som säljs mellan EU och Storbritannien få 10 procent tull från nyår – och priserna stiga på båda sidor.",
-      "kalla": "EuropaWire / VDA",
-      "url": "https://news.europawire.eu/vda-urges-eu-and-uk-to-delay-stricter-electric-vehicle-trade-rules-to-protect-automotive-competitiveness/eu-press-release/2026/11/17/19/32/05/188227/",
-      "datum": "2026-11-17"
-    },
-    {
-      "rubrik": "BMW startar serietillverkning av nya batterier för iX5",
-      "betyder": "BMW:s nya batterigeneration för Neue Klasse sprids nu till fler modeller – iX5 är nästa i tur.",
-      "kalla": "MarkLines",
-      "url": "https://www.marklines.com/en/news/354289?rf=latest-contents",
-      "datum": "2026-11-18"
+      "rubrik": "Ford börjar bygga egna LFP-battericeller med CATL-teknik i USA",
+      "betyder": "Billigare LFP-celler tillverkade utanför Kina är en nyckel till prisvärda elbilar, och Fords start visar att kinesisk batteriteknik letar sig in i västvärldens fabriker trots handelskonflikterna.",
+      "kalla": "CnEVPost",
+      "url": "https://cnevpost.com/2026/11/19/ford-ships-lfp-battery-cells-using-catl-tech",
+      "datum": "2026-11-19"
     }
   ]
 }
