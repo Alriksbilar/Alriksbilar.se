@@ -20,11 +20,11 @@ async function ml(path, token, options = {}) {
   return { ok: res.ok, status: res.status, data };
 }
 
-async function gruppId(token) {
-  const sok = await ml(`/groups?filter[name]=${encodeURIComponent(GRUPP)}&limit=25`, token);
-  const hittad = sok.ok && (sok.data?.data || []).find(g => g.name === GRUPP);
+async function gruppId(token, namn = GRUPP) {
+  const sok = await ml(`/groups?filter[name]=${encodeURIComponent(namn)}&limit=25`, token);
+  const hittad = sok.ok && (sok.data?.data || []).find(g => g.name === namn);
   if (hittad) return hittad.id;
-  const ny = await ml("/groups", token, { method: "POST", body: JSON.stringify({ name: GRUPP }) });
+  const ny = await ml("/groups", token, { method: "POST", body: JSON.stringify({ name: namn }) });
   return ny.ok ? ny.data?.data?.id : null;
 }
 
@@ -41,13 +41,15 @@ export default async (req) => {
   if (body?.samtycke !== "ja") return json({ fel: "samtycke saknas" }, 400);
   if (body?.["bot-field"]) return json({ ok: true }); // honeypot: låtsas lyckas
 
-  const grupp = await gruppId(token);
+  const grupper = [await gruppId(token)];
+  // Anmälan via medlemssidan (/bilbrev-medlem/) hamnar även i gruppen "Medlemmar".
+  if (body?.medlem === "ja") grupper.push(await gruppId(token, "Medlemmar"));
   const res = await ml("/subscribers", token, {
     method: "POST",
     body: JSON.stringify({
       email: epost,
       fields: fornamn ? { name: fornamn } : {},
-      groups: grupp ? [String(grupp)] : [],
+      groups: grupper.filter(Boolean).map(String),
       opted_in_at: new Date().toISOString().slice(0, 19).replace("T", " "),
       optin_ip: req.headers.get("x-nf-client-connection-ip") || undefined
     })

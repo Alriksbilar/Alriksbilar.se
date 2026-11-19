@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /bilbrev-medlem/
 
 Sitemap: https://alriksbilar.se/sitemap.xml
