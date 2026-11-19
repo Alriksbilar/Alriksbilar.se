@@ -405,17 +405,23 @@
   .art-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
   .art-head h2{margin:0}
   .art-head a{font-weight:800;color:var(--teal);text-decoration:none}
-  .art-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
-  .art-kort{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:#fff;border-radius:var(--radius);overflow:hidden;text-decoration:none;box-shadow:0 0 0 1px var(--line);transition:transform .15s}
-  .art-lista.en .art-kort{grid-column:1/-1}
-  @media (max-width:760px){.art-kort{grid-template-columns:1fr}}
+  .art-lista{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+  @media (max-width:1000px){.art-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:520px){.art-lista{grid-template-columns:1fr 1fr;gap:12px}}
+  .art-kort{display:flex;flex-direction:column;background:#fff;border-radius:var(--radius);overflow:hidden;text-decoration:none;box-shadow:0 0 0 1px var(--line);transition:transform .15s}
   .art-kort:hover{transform:translateY(-3px)}
-  .art-kort img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
-  .art-kort .ak{padding:22px 24px;align-self:center}
-  .art-kort .ad{font-family:var(--mono);font-size:.74rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
-  .art-kort h3{font-size:1.6rem;margin:6px 0 10px}
-  .art-kort p{margin:0 0 12px}
-  .art-kort .las{font-weight:800;color:var(--teal)}
+  .art-kort img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  .art-kort .ak{padding:12px 14px 14px}
+  .art-kort .ad{font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
+  .art-kort h3{font-size:1.02rem;line-height:1.25;margin:5px 0 0;color:var(--black)}
+  @media (max-width:520px){.art-kort h3{font-size:.9rem}.art-kort .ak{padding:9px 10px 11px}}
+  .senart{display:flex;align-items:center;gap:14px;margin-top:14px;background:#fff;border-radius:12px;padding:8px;text-decoration:none;color:var(--black);box-shadow:0 0 0 1px var(--line)}
+  .senart img{width:120px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none}
+  .senart small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
+  .senart b{font-size:1rem;line-height:1.25}
+  .senart .pil{margin-left:auto;font-weight:800;color:var(--teal);padding-right:8px;white-space:nowrap}
+  .senart[hidden]{display:none}
+  @media (max-width:520px){.senart img{width:84px}.senart .pil{display:none}}
 </style>
 </head>
 <body>
@@ -461,6 +467,7 @@
         </div>
         <a class="btn yellow" href="https://www.youtube.com/@alriksbilar?sub_confirmation=1" target="_blank" rel="noopener">▶ Prenumerera</a>
       </div>
+      <a class="senart" id="senArt" hidden></a>
     </div>
 
     <aside class="telegram" id="nyheter" aria-label="Dagens bilnyheter">
@@ -511,7 +518,7 @@
 <!-- ARTIKLAR -->
 <section class="artiklar" id="artiklar" hidden>
   <div class="wrap">
-    <div class="art-head"><div><div class="kicker">Läs</div><h2>Senaste artiklarna</h2></div><a href="/artiklar/">Alla artiklar →</a></div>
+    <div class="art-head"><div><div class="kicker">Läs</div><h2>Fler artiklar</h2></div><a href="/artiklar/">Alla artiklar →</a></div>
     <div class="art-lista" id="artLista"></div>
   </div>
 </section>
@@ -1017,14 +1024,19 @@ function spelaLista(p){
 
 /* ---------- Artiklar: artiklar.json ---------- */
 fetch('/artiklar.json').then(r => r.json()).then(d => {
-  const a = d.artiklar.slice(0, 3);
+  const all = d.artiklar || [];
+  if (!all.length) return;
+  const dat = x => new Date(x.datum).toLocaleDateString('sv-SE',{day:'numeric',month:'long'});
+  const f = all[0], sa = document.getElementById('senArt');
+  sa.href = `/artiklar/${esc(f.slug)}/`;
+  sa.innerHTML = `<img src="${esc(f.bild)}" alt="" loading="lazy"><span><small>Senaste artikeln · ${esc(f.kategori)}</small><b>${esc(f.rubrik)}</b></span><span class="pil">Läs →</span>`;
+  sa.hidden = false;
+  const a = all.slice(1, 5);
   if (!a.length) return;
-  const l = document.getElementById('artLista');
-  l.classList.toggle('en', a.length === 1);
-  l.innerHTML = a.map(x => `
+  document.getElementById('artLista').innerHTML = a.map(x => `
     <a class="art-kort" href="/artiklar/${esc(x.slug)}/">
       <img src="${esc(x.bild)}" alt="" loading="lazy">
-      <div class="ak"><div class="ad">${new Date(x.datum).toLocaleDateString('sv-SE',{day:'numeric',month:'long'})} · ${esc(x.kategori)}</div><h3>${esc(x.rubrik)}</h3><p>${esc(x.ingress)}</p><span class="las">Läs artikeln →</span></div>
+      <div class="ak"><div class="ad">${dat(x)} · ${esc(x.kategori)}</div><h3>${esc(x.rubrik)}</h3></div>
     </a>`).join('');
   document.getElementById('artiklar').hidden = false;
 }).catch(() => {});
