@@ -136,3 +136,9 @@ section[id],[id]{scroll-margin-top:84px}
 .galleri figcaption{font-size:.74rem}
 @media (max-width:700px){.galleri{grid-template-columns:1fr}}
 .galleri.hel img{aspect-ratio:auto;object-fit:contain;background:#000}
+.tabell{width:100%;border-collapse:collapse;margin:18px 0 8px;font-size:.92rem}
+.tabell th{background:var(--black);color:var(--yellow);text-align:left;padding:8px 10px;font-weight:800}
+.tabell td{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tabell tr:nth-child(even) td{background:rgba(43,131,117,.06)}
+.tabell-wrap{overflow-x:auto}
+.kalla{font-size:.8rem;color:var(--muted)}
