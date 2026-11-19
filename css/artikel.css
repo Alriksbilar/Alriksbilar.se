@@ -142,3 +142,8 @@ section[id],[id]{scroll-margin-top:84px}
 .tabell tr:nth-child(even) td{background:rgba(43,131,117,.06)}
 .tabell-wrap{overflow-x:auto}
 .kalla{font-size:.8rem;color:var(--muted)}
+.filmpuff{display:flex;gap:16px;align-items:center;background:var(--black);color:#fff;border-radius:14px;padding:12px;margin:22px 0;text-decoration:none}
+.filmpuff img{width:180px;aspect-ratio:16/9;object-fit:cover;border-radius:9px;flex:none}
+.filmpuff small{display:block;color:var(--yellow);font-family:var(--mono);font-size:.72rem;margin-bottom:4px}
+.filmpuff b{font-size:1.02rem;line-height:1.3}
+@media (max-width:560px){.filmpuff img{width:120px}}
