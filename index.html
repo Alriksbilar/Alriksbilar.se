@@ -850,7 +850,11 @@ async function laddaFilmer(){
   playInHero(senaste, false);
   document.getElementById('poster').onclick = () => playInHero(current);
   // Fler filmer
-  document.getElementById('films').innerHTML = alla.slice(1, 6).map(filmCard).join('') + brevPuff();
+  // Fyll alltid rutnätet: 5 filmer + nyhetsbrevspuffen = 6 rutor (2 hela rader). Saknas nya filmer fylls det på ur arkivet.
+  const fler = alla.slice(1, 6);
+  for (const v of arkiv) { if (fler.length >= 5) break; if (!fler.some(x => x.id === v.id)) fler.push(v); }
+  document.getElementById('films').innerHTML = fler.map(v => filmCard(v)).join('') + brevPuff();
+  arkiv = arkiv.filter(v => !fler.some(x => x.id === v.id)).length ? arkiv.filter(v => !fler.some(x => x.id === v.id)) : arkiv;
   kopplaBrevPuff();
   slumpaArkiv();
   document.getElementById('engFilm').innerHTML = eng.length ? filmCard(eng[0], true) : '';
