@@ -1,25 +1,32 @@
 {
-  "uppdaterad": "2026-11-19",
+  "uppdaterad": "2026-11-20",
   "nyheter": [
     {
-      "rubrik": "USA granskar Mercedes kinesiska ägare – Volvo kan ligga ännu värre till",
-      "betyder": "Med Geely som ägare till nästan 80 procent är Volvo betydligt mer utsatt än Mercedes om USA stänger dörren för kinesiskt ägda bilmärken – och USA är en av Volvos viktigaste marknader.",
-      "kalla": "Carup",
-      "url": "https://carup.se/usa-vill-stoppa-kinesiskt-agda-bilar-volvo-i-farozonen/",
+      "rubrik": "Kinesiska elbilar skaver när Storbritannien närmar sig EU",
+      "betyder": "Vid dagens EU–UK-toppmöte står frågan om brittiskbyggda bilar ska räknas som \"Made in Europe\" mot EU:s krav på hårdare linje mot Kina, och utfallet påverkar både tullar och vilka bilar som blir dyrare i Europa.",
+      "kalla": "Reuters (via Euronext)",
+      "url": "https://live.euronext.com/en/financial-news/analysis-uks-eu-reset-hits-china-ev-speed-bump",
       "datum": "2026-11-19"
     },
     {
-      "rubrik": "Biltillverkarna kräver elbilsbesked inför fredagens EU–UK-möte",
-      "betyder": "Enligt branschen klarar inte ens var fjärde elbil eller laddhybrid kraven nästa år, så uteblir ett uppskov på fredag riskerar bilar från europeiska fabriker att bli dyrare i Storbritannien – och tvärtom.",
-      "kalla": "EuropaWire (ACEA/SMMT)",
-      "url": "https://news.europawire.eu/acea-and-smmt-call-for-eu-uk-summit-deal-to-protect-e80-billion-automotive-trade-from-new-barriers/eu-press-release/2026/11/18/16/44/11/188475/",
-      "datum": "2026-11-18"
+      "rubrik": "Volvo EX60 utsedd till årets bil av brittiska Carwow",
+      "betyder": "Priset ger Volvos viktigaste nya elbil draghjälp på en stor exportmarknad, men glädjen grumlas av att produktionen i Torslanda fortfarande inte hinner ikapp beställningarna.",
+      "kalla": "Carwow",
+      "url": "https://www.carwow.co.uk/news/11600/volvo-ex60-wins-carwow-coty-2027",
+      "datum": "2026-11-19"
     },
     {
-      "rubrik": "Ford börjar bygga egna LFP-battericeller med CATL-teknik i USA",
-      "betyder": "Billigare LFP-celler tillverkade utanför Kina är en nyckel till prisvärda elbilar, och Fords start visar att kinesisk batteriteknik letar sig in i västvärldens fabriker trots handelskonflikterna.",
-      "kalla": "CnEVPost",
-      "url": "https://cnevpost.com/2026/11/19/ford-ships-lfp-battery-cells-using-catl-tech",
+      "rubrik": "Sydkoreanska POSCO ska leverera litium till batterijätten CATL",
+      "betyder": "Att världens största batteritillverkare säkrar råvara långsiktigt visar hur hård kampen om litium är – och tillgången på råvaror avgör i slutändan vad batterierna i våra elbilar kostar.",
+      "kalla": "electrive",
+      "url": "https://www.electrive.com/2026/11/19/posco-expands-lithium-business-with-major-order-from-catl/",
+      "datum": "2026-11-19"
+    },
+    {
+      "rubrik": "Sila tecknar miljardavtal om kiselanoder med Panasonic i USA",
+      "betyder": "Kiselbaserade anoder kan ge mer energi i samma batteristorlek, och avtalet visar att USA bygger upp en egen leverantörskedja för batterimaterial vid sidan av Kina.",
+      "kalla": "electrive",
+      "url": "https://www.electrive.com/2026/11/19/sila-secures-billion-dollar-offtake-agreement-with-panasonic/",
       "datum": "2026-11-19"
     }
   ]
