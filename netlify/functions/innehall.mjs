@@ -16,7 +16,7 @@ export default async (req, context) => {
     if (fil === "podd" && data.rss) {
       try { const avsnitt = await lasRss(data.rss); if (avsnitt.length) { data.avsnitt = avsnitt; text = JSON.stringify(data); } } catch {}
     }
-    return new Response(text, { headers: { ...huvud, "netlify-cdn-cache-control": "public, durable, s-maxage=300, stale-while-revalidate=3600" } });
+    return new Response(text, { headers: { ...huvud, "netlify-cdn-cache-control": "public, durable, s-maxage=120, stale-while-revalidate=30" } });
   } catch (e) {
     const reserv = await fetch(new URL("/" + fil + ".json", req.url));
     return new Response(await reserv.text(), { status: reserv.status, headers: { ...huvud, "netlify-cdn-cache-control": "no-store" } });
