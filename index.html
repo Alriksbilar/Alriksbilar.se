@@ -220,6 +220,12 @@
   .spellista .st{font-weight:800;margin-top:8px;line-height:1.3}
   .spellista:hover .st{color:var(--yellow)}
   .spellista:focus-visible .sb{outline:3px solid var(--yellow);outline-offset:3px}
+  .spellista.medlem{text-decoration:none;color:inherit}
+  .spellista.medlem .sb{background:var(--yellow);display:flex;flex-direction:column;justify-content:center;padding:0 18px;color:#111}
+  .spellista.medlem .sb b{font-size:2rem;line-height:1}
+  .spellista.medlem .sb em{font-style:normal;font-weight:900;font-size:1.05rem;margin-top:6px;line-height:1.2}
+  .spellista.medlem .sb i{font-style:normal;font-weight:700;font-size:.78rem;margin-top:4px}
+  .spellista.medlem .st small{display:block;font-weight:600;color:#aaa;font-size:.8rem;margin-top:2px}
   /* Veckans fråga + Fråga podden */
   .interakt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .interakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -967,6 +973,7 @@ document.addEventListener('keydown', e => {
 });
 
 /* ---------- Topplistor, den bortglömda pärlan och spellistor ---------- */
+const KANAL_SUFFIX = 'U-4UJDGqQWK5Iv4wXDlzGQ';   // Alriks Bilar (UC…) utan 'UC'
 const tal = n => Number(n).toLocaleString('sv-SE');
 function veckonummer(d = new Date()){
   const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -1017,7 +1024,13 @@ function spelaLista(p){
     .sort((a, b) => b.antal - a.antal).slice(0, 14);
   if (t.spellistor.length) {
     document.getElementById('spellistorWrap').hidden = false;
-    document.getElementById('spellistor').innerHTML = t.spellistor.map((p, i) => `
+    // Fast första kort: medlemmarnas egen spellista (öppnas på YouTube, där medlemmarna är inloggade)
+    const medlemKort = `
+      <a class="spellista medlem" href="https://www.youtube.com/playlist?list=UUMO${KANAL_SUFFIX}" target="_blank" rel="noopener">
+        <div class="sb"><b>★</b><em>Medlemsfilmer utan reklam</em><i>100+ filmer bara för medlemmar</i></div>
+        <div class="st">Medlemsfilmer utan reklam<small>För dig som är kanalmedlem – öppnas på YouTube</small></div>
+      </a>`;
+    document.getElementById('spellistor').innerHTML = medlemKort + t.spellistor.map((p, i) => `
       <button class="spellista" data-i="${i}">
         <div class="sb">${p.bild ? `<img src="${esc(p.bild)}" alt="" loading="lazy">` : ''}<span>${p.antal}<small>filmer</small></span></div>
         <div class="st">${esc(p.titel)}</div>
