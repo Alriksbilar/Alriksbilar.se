@@ -1059,7 +1059,7 @@ hamtaInnehall('nyheter').then(r => r.json()).then(data => {
   document.getElementById('tgDate').textContent = fmtKort(data.uppdaterad);
   document.getElementById('news').innerHTML = data.nyheter.map(n => `
     <li>
-      <div class="d">${fmtKort(n.datum)} · ${esc(n.kalla)}</div>
+      <div class="d">${esc(n.kalla)}</div>
       <div class="r">${esc(n.rubrik)}</div>
       <div class="b"><em>Betyder</em>${esc(n.betyder)}</div>
       <div class="k"><a href="${esc(n.url)}" target="_blank" rel="noopener">Läs källan →</a></div>
