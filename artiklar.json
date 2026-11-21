@@ -1,6 +1,15 @@
 {
   "artiklar": [
     {
+      "slug": "geely-volvo-utveckling",
+      "rubrik": "Halva priset, halva tiden – är Volvo kört i Sverige?",
+      "ingress": "8 000 ingenjörer och över hundra bilprojekt samtidigt. Jag var hos Geely utanför Shanghai – och en fråga har inte släppt mig sedan dess.",
+      "datum": "2026-11-22",
+      "kategori": "Reportage",
+      "bild": "/img/artiklar/geely-volvo-utveckling/hero.jpg",
+      "film": "FILM_ID"
+    },
+    {
       "slug": "basta-vinterdacken-2026",
       "rubrik": "Bästa vinterdäcken 2026 – så sa testerna",
       "ingress": "”Tro inte att det är sommar!” Vinnarna i årets stora vinterdäckstester – och vilka däck som ger mest säkerhet för pengarna.",
