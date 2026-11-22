@@ -1,8 +1,9 @@
 {
-  "id": "2026-11-m3",
-  "fraga": "Vilken motorisering skulle det finnas i din nya BMW M3?",
+  "id": "2026-11-22-knappar-skarm",
+  "fraga": "Bilarna får allt mer teknik och större skärmar. Vad vill du helst ha i din nästa bil?",
   "alternativ": [
-    {"kort": "Bensin", "text": "En bensinmotor på ca 550 hk"},
-    {"kort": "El", "text": "Fyra elmotorer på totalt 850 hk, som kan styras individuellt"}
+    {"kort": "Knappar", "text": "Riktiga knappar och vred"},
+    {"kort": "Pekskärm", "text": "En jättestor pekskärm"},
+    {"kort": "Röststyrning", "text": "Röststyrning – jag vill bara prata med bilen"}
   ]
 }
