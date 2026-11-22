@@ -33,6 +33,43 @@ async function hamta(kanalId, typ = "channel_id") {
   }).filter(v => v.id);
 }
 
+// Premiärer: RSS-flödet visar en schemalagd premiär som vilken film som helst, med datumet då den lades upp.
+// En premiär som ligger längre fram än PREMIAR_GRANS_H timmar ska inte ligga överst på sajten – den flyttas
+// ned till plats 2, efter den senaste vanliga filmen. Inom gränsen (t.ex. två timmar kvar) får den ligga överst.
+// Kräver YOUTUBE_API_KEY (samma nyckel som topplistorna); saknas den lämnas ordningen som den är.
+const PREMIAR_GRANS_H = 24;
+const apiNyckel = () => (globalThis.Netlify?.env?.get?.("YOUTUBE_API_KEY") || process.env.YOUTUBE_API_KEY || "").trim().replace(/^["']|["']$/g, "");
+
+async function premiarer(ids) {
+  const key = apiNyckel();
+  if (!key || !ids.length) return {};
+  const url = new URL("https://www.googleapis.com/youtube/v3/videos");
+  url.searchParams.set("part", "snippet,liveStreamingDetails");
+  url.searchParams.set("id", ids.slice(0, 50).join(","));
+  url.searchParams.set("key", key);
+  const res = await fetch(url).catch(() => null);
+  if (!res?.ok) return {};
+  const d = await res.json().catch(() => ({}));
+  const ut = {};
+  for (const v of d.items || []) {
+    const start = v.liveStreamingDetails?.scheduledStartTime;
+    if (v.snippet?.liveBroadcastContent === "upcoming" && start) ut[v.id] = start;
+  }
+  return ut;
+}
+
+// Lägger premiärer som ligger för långt fram efter den första film som går att se nu.
+function ordnaPremiarer(lista, start) {
+  const grans = Date.now() + PREMIAR_GRANS_H * 3600000;
+  const langtFram = v => start[v.id] && Date.parse(start[v.id]) > grans;
+  const med = lista.map(v => (start[v.id] ? { ...v, premiar: start[v.id] } : v));
+  const senare = med.filter(langtFram);
+  if (!senare.length || !langtFram(med[0])) return med;
+  const ovriga = med.filter(v => !langtFram(v));
+  if (!ovriga.length) return med;
+  return [ovriga[0], ...senare, ...ovriga.slice(1)];
+}
+
 export default async () => {
   // Kanalflödet har bara de 15 senaste uppladdningarna – shorts inräknade. Spellistan "UULF…"
   // innehåller enbart långa filmer, så den ger 15 senaste riktiga filmer oavsett hur många shorts som läggs upp.
@@ -46,10 +83,12 @@ export default async () => {
     for (const v of [...flode.filter(v => !v.shorts), ...langa]) if (!set.has(v.id)) { set.add(v.id); ut.push(utan(v)); }
     return ut.sort((a, b) => (b.datum || "").localeCompare(a.datum || ""));
   };
+  const svFilmer = filmer(sv, svLang), enFilmer = filmer(en, enLang);
+  const start = await premiarer([...svFilmer.slice(0, 5), ...enFilmer.slice(0, 5)].map(v => v.id)).catch(() => ({}));
   const body = {
     kalla: "youtube",
-    svenska: filmer(sv, svLang),
-    english: filmer(en, enLang),
+    svenska: ordnaPremiarer(svFilmer, start),
+    english: ordnaPremiarer(enFilmer, start),
     shorts: sv.filter(v => v.shorts).map(({ shorts, ...v }) => v)
   };
   return new Response(JSON.stringify(body), {
