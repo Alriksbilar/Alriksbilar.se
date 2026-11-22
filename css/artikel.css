@@ -164,3 +164,4 @@ section[id],[id]{scroll-margin-top:84px}
 .relaterat .art-lista{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
 .relaterat .art-kort h3{font-size:1.1rem}
 .relaterat .art-kort p{font-size:.9rem}
+.art-hero{margin:0;max-width:980px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden}.art-hero img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
