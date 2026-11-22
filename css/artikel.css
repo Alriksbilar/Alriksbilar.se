@@ -157,3 +157,10 @@ section[id],[id]{scroll-margin-top:84px}
 .kronika p{color:#e9e3d4}
 .kronika p:last-child{margin-bottom:0}
 @media (max-width:560px){.kronika .kr-bild img{aspect-ratio:3/2}.kronika .kr-text{padding:18px 18px 22px}}
+
+/* Läs också */
+.relaterat{margin-top:44px}
+.relaterat h2{margin:0 0 18px}
+.relaterat .art-lista{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.relaterat .art-kort h3{font-size:1.1rem}
+.relaterat .art-kort p{font-size:.9rem}

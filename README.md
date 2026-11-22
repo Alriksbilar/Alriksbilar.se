@@ -24,3 +24,7 @@ Anmälningar går till MailerLite (gruppen "Alriks Bilbrev") via /api/prenumerer
 ## Krediter hos Netlify
 
 Varje publicering kostar krediter. Därför läses `nyheter.json`, `podd.json` och `poll.json` direkt från GitHub via `/api/innehall/<fil>`, och `netlify.toml` hoppar över publicering när bara de filerna (eller README) ändrats. Samla design- och kodändringar i färre publiceringar.
+
+## Artiklar
+
+Nya artiklar läggs in i `artiklar.json` (slug, rubrik, ingress, datum, kategori, bild). Då får de automatiskt ett kort på /artiklar/, en knapp i kategorifiltret (länkbar som /artiklar/?kategori=Trippeltest) och visas under "Läs också" i andra artiklar (`js/relaterat.js`, samma kategori först). Ny artikelsida behöver `<div class="relaterat" id="relaterat"></div>` efter `.slut` och `<script src="/js/relaterat.js" defer></script>`.

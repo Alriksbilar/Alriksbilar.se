@@ -53,6 +53,7 @@
 </div>
 <section class="art" style="padding-top:36px">
   <div class="wrap" style="max-width:1200px">
+    <div class="ls-chips" id="artFilter" role="group" aria-label="Filtrera artiklar"></div>
     <div class="art-lista" id="artLista"></div>
   </div>
 </section>
@@ -84,11 +85,32 @@
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const datum = d => new Date(d).toLocaleDateString('sv-SE', {day:'numeric', month:'long', year:'numeric'});
 fetch('/artiklar.json').then(r => r.json()).then(d => {
-  document.getElementById('artLista').innerHTML = d.artiklar.map(a => `
+  const alla = d.artiklar || [];
+  const lista = document.getElementById('artLista'), filter = document.getElementById('artFilter');
+  const kategorier = [...new Set(alla.map(a => a.kategori))];
+  const visa = kat => {
+    lista.innerHTML = alla.filter(a => !kat || a.kategori === kat).map(a => `
     <a class="art-kort" href="/artiklar/${esc(a.slug)}/">
       <img src="${esc(a.bild)}" alt="" loading="lazy">
       <div class="ak"><div class="ad">${datum(a.datum)} · ${esc(a.kategori)}</div><h3>${esc(a.rubrik)}</h3><p>${esc(a.ingress)}</p></div>
     </a>`).join('');
+    filter.querySelectorAll('button').forEach(b => {
+      const pa = (b.dataset.kat || '') === (kat || '');
+      b.classList.toggle('on', pa); b.setAttribute('aria-pressed', pa);
+    });
+  };
+  const antal = k => alla.filter(a => a.kategori === k).length;
+  filter.innerHTML = `<button type="button" data-kat="">Alla (${alla.length})</button>` +
+    kategorier.map(k => `<button type="button" data-kat="${esc(k)}">${esc(k)} (${antal(k)})</button>`).join('');
+  filter.hidden = kategorier.length < 2;
+  filter.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const kat = b.dataset.kat;
+    history.replaceState(null, '', kat ? '?kategori=' + encodeURIComponent(kat) : location.pathname);
+    visa(kat);
+  });
+  const fran = new URLSearchParams(location.search).get('kategori');
+  visa(kategorier.includes(fran) ? fran : '');
 });
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aeec8bb099cf4db8878906b9348aca14"}'></script><!-- End Cloudflare Web Analytics -->
