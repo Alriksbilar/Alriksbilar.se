@@ -1,32 +1,25 @@
 {
-  "uppdaterad": "2026-11-20",
+  "uppdaterad": "2026-11-23",
   "nyheter": [
     {
-      "rubrik": "Kinesiska elbilar skaver när Storbritannien närmar sig EU",
-      "betyder": "Vid dagens EU–UK-toppmöte står frågan om brittiskbyggda bilar ska räknas som \"Made in Europe\" mot EU:s krav på hårdare linje mot Kina, och utfallet påverkar både tullar och vilka bilar som blir dyrare i Europa.",
-      "kalla": "Reuters (via Euronext)",
-      "url": "https://live.euronext.com/en/financial-news/analysis-uks-eu-reset-hits-china-ev-speed-bump",
-      "datum": "2026-11-19"
+      "rubrik": "USA nära lag som stänger ute kinesiska biltillverkare",
+      "betyder": "Hur gränsen för kinesiskt ägande dras avgör vilka märken som får sälja bilar i USA, och det är något Geely-ägda Volvo och Polestar har all anledning att följa noga.",
+      "kalla": "CBT News",
+      "url": "https://www.cbtnews.com/lawmakers-to-ban-chinese-automakers/",
+      "datum": "2026-11-20"
     },
     {
-      "rubrik": "Volvo EX60 utsedd till årets bil av brittiska Carwow",
-      "betyder": "Priset ger Volvos viktigaste nya elbil draghjälp på en stor exportmarknad, men glädjen grumlas av att produktionen i Torslanda fortfarande inte hinner ikapp beställningarna.",
-      "kalla": "Carwow",
-      "url": "https://www.carwow.co.uk/news/11600/volvo-ex60-wins-carwow-coty-2027",
-      "datum": "2026-11-19"
+      "rubrik": "Nederländsk domstol stoppar BYD Ti7 i EU – för lik Defender",
+      "betyder": "Beslutet visar att europeiska tillverkare nu använder designskydd som vapen mot kinesiska utmanare, och BYD:s nya terrängbil kan dröja eller helt utebli på den svenska marknaden.",
+      "kalla": "CnEVPost",
+      "url": "https://cnevpost.com/2026/11/22/dutch-court-bars-eu-sales-byd-ti7-land-rover-defender-design/",
+      "datum": "2026-11-22"
     },
     {
-      "rubrik": "Sydkoreanska POSCO ska leverera litium till batterijätten CATL",
-      "betyder": "Att världens största batteritillverkare säkrar råvara långsiktigt visar hur hård kampen om litium är – och tillgången på råvaror avgör i slutändan vad batterierna i våra elbilar kostar.",
-      "kalla": "electrive",
-      "url": "https://www.electrive.com/2026/11/19/posco-expands-lithium-business-with-major-order-from-catl/",
-      "datum": "2026-11-19"
-    },
-    {
-      "rubrik": "Sila tecknar miljardavtal om kiselanoder med Panasonic i USA",
-      "betyder": "Kiselbaserade anoder kan ge mer energi i samma batteristorlek, och avtalet visar att USA bygger upp en egen leverantörskedja för batterimaterial vid sidan av Kina.",
-      "kalla": "electrive",
-      "url": "https://www.electrive.com/2026/11/19/sila-secures-billion-dollar-offtake-agreement-with-panasonic/",
+      "rubrik": "Koenigsegg värderas till 1,3 miljarder euro i ny ägaraffär",
+      "betyder": "Ängelholmsföretagets värde har stigit kraftigt sedan 2024 och den nya ägaren pratar om börsnotering, vilket på sikt kan göra det möjligt för vanliga svenskar att äga en bit av hyperbilstillverkaren.",
+      "kalla": "AutoNext",
+      "url": "https://www.autonext.co/news/koenigsegg-stake-sale-valuation-temasek",
       "datum": "2026-11-19"
     }
   ]
