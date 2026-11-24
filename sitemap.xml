@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://alriksbilar.se/</loc></url>
-  <url><loc>https://alriksbilar.se/artiklar/</loc></url>
-  <url><loc>https://alriksbilar.se/privatleasing/</loc></url>
-  <url><loc>https://alriksbilar.se/artiklar/geely-volvo-utveckling/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/basta-vinterdacken-2026/</loc><lastmod>2026-11-19</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/polestar-4-suv-provkorning/</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/bmw-i3-provkorning/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/trippeltest-ex60-ix3-glc/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/trippeltest-laddhybrider/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://alriksbilar.se/artiklar/bmw-m3-elektrisk/</loc><lastmod>2026-11-18</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://alriksbilar.se/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://alriksbilar.se/artiklar/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://alriksbilar.se/privatleasing/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://alriksbilar.se/artiklar/geely-volvo-utveckling/</loc><lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/geely-volvo-utveckling/hero.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/polestar-4-suv-provkorning/</loc><lastmod>2026-11-22</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/polestar-4-suv-provkorning/hero.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/basta-vinterdacken-2026/</loc><lastmod>2026-11-19</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/basta-vinterdacken-2026/puff.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/bmw-i3-provkorning/</loc><lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/bmw-i3-provkorning/hero.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/trippeltest-ex60-ix3-glc/</loc><lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/trippeltest-ex60-ix3-glc/hero.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/trippeltest-laddhybrider/</loc><lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/artiklar/trippeltest-laddhybrider/tre-framifran.jpg</image:loc></image:image></url>
+  <url><loc>https://alriksbilar.se/artiklar/bmw-m3-elektrisk/</loc><lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://alriksbilar.se/img/hero-bmw-m3.jpg</image:loc></image:image></url>
 </urlset>

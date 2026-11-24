@@ -9,3 +9,10 @@
   for = "/*.json"
   [headers.values]
     Cache-Control = "public, max-age=300"
+
+# Samla all trafik på en adress (bra för Google): www -> utan www
+[[redirects]]
+  from = "https://www.alriksbilar.se/*"
+  to = "https://alriksbilar.se/:splat"
+  status = 301
+  force = true

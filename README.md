@@ -28,3 +28,7 @@ Varje publicering kostar krediter. Därför läses `nyheter.json`, `podd.json` o
 ## Artiklar
 
 Nya artiklar läggs in i `artiklar.json` (slug, rubrik, ingress, datum, kategori, bild). Då får de automatiskt ett kort på /artiklar/, en knapp i kategorifiltret (länkbar som /artiklar/?kategori=Trippeltest) och visas under "Läs också" i andra artiklar (`js/relaterat.js`, samma kategori först). Ny artikelsida behöver `<div class="relaterat" id="relaterat"></div>` efter `.slut` och `<script src="/js/relaterat.js" defer></script>`.
+
+## Google (SEO)
+
+Efter att en ny artikel lagts in i `artiklar.json`: kör `python3 verktyg/seo.py`. Skriptet uppdaterar `sitemap.xml` och den strukturerade datan (JSON-LD) för artikel, film och brödsmulor på alla sidor. Valfria fält i `artiklar.json`: `uppdaterad` (datum då artikeln ändrats) och `filmdatum` (filmens publiceringsdatum på YouTube, annars används `datum`).
