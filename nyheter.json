@@ -1,26 +1,33 @@
 {
-  "uppdaterad": "2026-11-23",
+  "uppdaterad": "2026-11-24",
   "nyheter": [
     {
-      "rubrik": "USA nära lag som stänger ute kinesiska biltillverkare",
-      "betyder": "Hur gränsen för kinesiskt ägande dras avgör vilka märken som får sälja bilar i USA, och det är något Geely-ägda Volvo och Polestar har all anledning att följa noga.",
-      "kalla": "CBT News",
-      "url": "https://www.cbtnews.com/lawmakers-to-ban-chinese-automakers/",
-      "datum": "2026-11-20"
-    },
-    {
-      "rubrik": "Nederländsk domstol stoppar BYD Ti7 i EU – för lik Defender",
-      "betyder": "Beslutet visar att europeiska tillverkare nu använder designskydd som vapen mot kinesiska utmanare, och BYD:s nya terrängbil kan dröja eller helt utebli på den svenska marknaden.",
-      "kalla": "CnEVPost",
-      "url": "https://cnevpost.com/2026/11/22/dutch-court-bars-eu-sales-byd-ti7-land-rover-defender-design/",
+      "rubrik": "USA:s Kinaförbud: Mercedes kan slippa undan – Volvos läge oklart",
+      "betyder": "Om lagen spikas utan undantag för majoritetsägda bolag kan Geely-ägda Volvo och Polestar få det mycket svårt i USA, vilket i förlängningen påverkar jobb och investeringar i Sverige.",
+      "kalla": "Carup",
+      "url": "https://carup.se/mercedes-raddas-fran-usas-bilforbud-osakert-for-volvo/",
       "datum": "2026-11-22"
     },
     {
-      "rubrik": "Koenigsegg värderas till 1,3 miljarder euro i ny ägaraffär",
-      "betyder": "Ängelholmsföretagets värde har stigit kraftigt sedan 2024 och den nya ägaren pratar om börsnotering, vilket på sikt kan göra det möjligt för vanliga svenskar att äga en bit av hyperbilstillverkaren.",
-      "kalla": "AutoNext",
-      "url": "https://www.autonext.co/news/koenigsegg-stake-sale-valuation-temasek",
-      "datum": "2026-11-19"
+      "rubrik": "Kinesiska laddhybrider med räckviddsförlängare slipper EU:s kvot",
+      "betyder": "Bilar som Leapmotor B10 och Xpeng L03 räknas troligen som elbilar och får strafftull men inget tak på antalet, så de kan fortsätta strömma in på den europeiska och svenska marknaden.",
+      "kalla": "electrive",
+      "url": "https://www.electrive.com/2026/11/23/eu-china-hybrid-import-quota-does-not-apply-to-range-extenders/",
+      "datum": "2026-11-23"
+    },
+    {
+      "rubrik": "EU-länderna backar från tvingande elbilskrav för förmånsbilar",
+      "betyder": "Blir det inga bindande krav kan bensin- och dieselbilar fortsätta vara skattegynnade som tjänstebilar i fler länder, vilket kan bromsa flödet av begagnade elbilar ut på andrahandsmarknaden.",
+      "kalla": "electrive",
+      "url": "https://www.electrive.com/2026/11/23/eu-council-signals-shift-away-from-binding-ev-quotas-for-corporate-fleets/",
+      "datum": "2026-11-23"
+    },
+    {
+      "rubrik": "Över ett års väntetid på VW ID. Polo – brist på battericeller",
+      "betyder": "Efterfrågan på billiga elbilar är större än vad fabrikerna hinner bygga, så den som vill ha en ny ID. Polo eller Cupra Raval får räkna med lång väntan.",
+      "kalla": "electrive",
+      "url": "https://www.electrive.com/2026/11/23/vw-id-polo-customers-now-face-year-long-wait-times/",
+      "datum": "2026-11-23"
     }
   ]
 }
