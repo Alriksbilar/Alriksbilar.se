@@ -415,6 +415,30 @@
   .social svg{width:18px;height:18px;fill:currentColor}
   footer small{color:#999}
   section[id],#top,#nyheter,#shortsWrap,#spellistorWrap,#parla{scroll-margin-top:84px}
+  /* Veckans nya bil */
+  .vbil{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .vbil-kort{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+  @media (max-width:860px){.vbil-kort{grid-template-columns:1fr}}
+  .vbil-bild{position:relative;background:var(--teal);min-height:260px;display:flex;align-items:flex-end}
+  .vbil-bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .vbil-bild .namn{position:relative;margin:18px;font-weight:900;font-style:italic;font-size:clamp(1.6rem,3.4vw,2.6rem);color:var(--yellow);line-height:1;text-shadow:0 2px 0 var(--black)}
+  .vbil-bild img + .namn{display:none}
+  .vbil-bild .credit{position:absolute;right:8px;bottom:6px;font-size:.66rem;color:#fff;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:4px}
+  .vbil-text{padding:24px 26px 26px}
+  .vbil-text h3{font-size:clamp(1.35rem,2.4vw,1.8rem);margin:6px 0 10px}
+  .vbil-text .ingress{font-weight:600;margin:0 0 12px}
+  .vbil-text p{margin:0 0 12px}
+  .vbil-fakta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:14px 0}
+  .vbil-fakta div{background:var(--cream);border-radius:10px;padding:8px 11px}
+  .vbil-fakta dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+  .vbil-fakta dd{margin:2px 0 0;font-weight:800;color:var(--black)}
+  .vbil-betyder{border-left:4px solid var(--yellow);padding:4px 0 4px 12px;margin:14px 0}
+  .vbil-betyder b{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+  .vbil-alrik{background:var(--black);color:#fff;border-radius:10px;padding:12px 14px;margin:14px 0;display:flex;gap:12px;align-items:flex-start}
+  .vbil-alrik img{width:44px;height:44px;border-radius:50%;flex:none;box-shadow:0 0 0 2px var(--yellow)}
+  .vbil-alrik q{font-style:italic;quotes:"”" "”"}
+  .vbil-kallor{font-size:.8rem;color:var(--muted)}
+  .vbil-kallor a{color:var(--teal)}
   /* Artiklar */
   .artiklar{padding:10px 0 50px}
   .art-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
@@ -459,7 +483,7 @@
     <div class="wrap meny-grid">
       <div><div class="mh">Titta</div><a href="/#filmer">Senaste filmerna</a><a href="/#shortsWrap">Shorts</a><a href="/#topp">Topplistan</a><a href="/#spellistorWrap">Spellistor</a></div>
       <div><div class="mh">Var med</div><a href="/#fragan">Veckans fråga</a><a href="/#fragan">Fråga podden</a><a href="/#nyhetsbrev">Nyhetsbrevet</a><a href="/#medlem">Bli medlem</a></div>
-      <div><div class="mh">Lyssna &amp; läs</div><a href="/artiklar/">Artiklar</a><a href="/privatleasing/">Privatleasing – billigast just nu</a><a href="/#podd">Podden Varför? – Därför!</a><a href="/#nyheter">Bilnytt</a></div>
+      <div><div class="mh">Lyssna &amp; läs</div><a href="/artiklar/">Artiklar</a><a href="/privatleasing/">Privatleasing – billigast just nu</a><a href="/#podd">Podden Varför? – Därför!</a><a href="/#nyheter">Bilnytt</a><a href="/#veckansbil">Veckans nya bil</a></div>
       <div><div class="mh">Alrik</div><a href="/#om">Om Alrik</a><a href="/#samarbeten">Samarbeten</a><a href="/#kontakt">Kontakt</a><a href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener">Alriks Cars – in English</a></div>
     </div>
   </div>
@@ -527,6 +551,14 @@
         <a class="btn" href="https://www.youtube.com/@AlriksCars" target="_blank" rel="noopener">▶ Watch on YouTube</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- VECKANS NYA BIL (veckansbil.json, uppdateras på onsdagar utan publicering) -->
+<section class="vbil" id="veckansbil" hidden>
+  <div class="wrap">
+    <div class="art-head"><div><div class="kicker" id="vbilKicker">Varje onsdag</div><h2>Veckans nya bil</h2></div></div>
+    <article class="vbil-kort" id="vbilKort"></article>
   </div>
 </section>
 
@@ -1048,6 +1080,29 @@ function spelaLista(p){
     document.querySelectorAll('.spellista').forEach(b => b.onclick = () => spelaLista(t.spellistor[Number(b.dataset.i)]));
   }
 })();
+
+/* ---------- Veckans nya bil: veckansbil.json ---------- */
+hamtaInnehall('veckansbil').then(r => r.json()).then(b => {
+  if (!b || !b.publicerad || !b.rubrik) return;
+  const vecka = b.vecka ? `Vecka ${b.vecka}` : '';
+  document.getElementById('vbilKicker').textContent = [vecka, fmt(b.datum)].filter(Boolean).join(' · ') || 'Varje onsdag';
+  const stycken = String(b.text || '').split(/\n\s*\n/).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join('');
+  const fakta = (b.fakta || []).map(f => `<div><dt>${esc(f.etikett)}</dt><dd>${esc(f.varde)}</dd></div>`).join('');
+  const kallor = (b.kallor || []).filter(k => /^https?:\/\//.test(k.url || '')).map(k => `<a href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.namn || k.url)}</a>`).join(' · ');
+  const bild = /^https?:\/\/|^\//.test(b.bild || '') ? `<img src="${esc(b.bild)}" alt="${esc((b.marke || '') + ' ' + (b.modell || ''))}" loading="lazy" onerror="this.remove()">` : '';
+  document.getElementById('vbilKort').innerHTML = `
+    <div class="vbil-bild">${bild}<div class="namn">${esc(b.marke || '')}<br>${esc(b.modell || '')}</div>${bild && b.bildkalla ? `<span class="credit">${esc(b.bildkalla)}</span>` : ''}</div>
+    <div class="vbil-text">
+      <h3>${esc(b.rubrik)}</h3>
+      ${b.ingress ? `<p class="ingress">${esc(b.ingress)}</p>` : ''}
+      ${stycken}
+      ${fakta ? `<dl class="vbil-fakta">${fakta}</dl>` : ''}
+      ${b.vadBetyder ? `<div class="vbil-betyder"><b>Vad betyder det?</b>${esc(b.vadBetyder)}</div>` : ''}
+      ${b.alriksRad ? `<div class="vbil-alrik"><img src="img/bakom-kameran.jpg" alt=""><div><b>Alrik:</b> <q>${esc(b.alriksRad)}</q></div></div>` : ''}
+      ${kallor ? `<div class="vbil-kallor">Källor: ${kallor}</div>` : ''}
+    </div>`;
+  document.getElementById('veckansbil').hidden = false;
+}).catch(() => {});
 
 /* ---------- Artiklar: artiklar.json ---------- */
 fetch('/artiklar.json').then(r => r.json()).then(d => {

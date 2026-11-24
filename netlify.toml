@@ -3,7 +3,7 @@
   functions = "netlify/functions"
   # Hoppa över publicering när bara innehållsfilerna ändrats (de läses direkt från GitHub via /api/innehall).
   # Exit 0 = hoppa över, 1 = publicera. Sparar Netlify-krediter.
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)nyheter.json' ':(exclude)podd.json' ':(exclude)poll.json' ':(exclude)leasing.json' ':(exclude)README.md'"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)nyheter.json' ':(exclude)podd.json' ':(exclude)poll.json' ':(exclude)leasing.json' ':(exclude)veckansbil.json' ':(exclude)README.md'"
 
 [[headers]]
   for = "/*.json"

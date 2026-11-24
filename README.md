@@ -32,3 +32,7 @@ Nya artiklar läggs in i `artiklar.json` (slug, rubrik, ingress, datum, kategori
 ## Google (SEO)
 
 Efter att en ny artikel lagts in i `artiklar.json`: kör `python3 verktyg/seo.py`. Skriptet uppdaterar `sitemap.xml` och den strukturerade datan (JSON-LD) för artikel, film och brödsmulor på alla sidor. Valfria fält i `artiklar.json`: `uppdaterad` (datum då artikeln ändrats) och `filmdatum` (filmens publiceringsdatum på YouTube, annars används `datum`).
+
+## Veckans nya bil
+
+Rutan "Veckans nya bil" på startsidan läser `veckansbil.json` via `/api/innehall/veckansbil` – uppdateras utan ny publicering hos Netlify (filen är undantagen i `netlify.toml`). Rutan syns bara när `"publicerad": true`. Fält: vecka, datum, marke, modell, rubrik, ingress, text (stycken separerade med tom rad), fakta [{etikett, varde}], vadBetyder, alriksRad, bild (officiell pressbild-URL eller /img/...), bildkalla, kallor [{namn, url}], tidigare [{vecka, datum, marke, modell, rubrik}]. Utkastet tas fram av den schemalagda uppgiften på onsdagar och publiceras först när Alrik godkänt.
