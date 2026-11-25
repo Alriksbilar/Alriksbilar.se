@@ -27,7 +27,7 @@ Varje publicering kostar krediter. Därför läses `nyheter.json`, `podd.json` o
 
 ## Artiklar
 
-Nya artiklar läggs in i `artiklar.json` (slug, rubrik, ingress, datum, kategori, bild). Då får de automatiskt ett kort på /artiklar/, en knapp i kategorifiltret (länkbar som /artiklar/?kategori=Trippeltest) och visas under "Läs också" i andra artiklar (`js/relaterat.js`, samma kategori först). Ny artikelsida behöver `<div class="relaterat" id="relaterat"></div>` efter `.slut` och `<script src="/js/relaterat.js" defer></script>`.
+Nya artiklar läggs in i `artiklar.json` (slug, rubrik, ingress, datum, kategori, bild). Då får de automatiskt ett kort på /artiklar/, en knapp i kategorifiltret (länkbar som /artiklar/?kategori=Trippeltest) och visas under "Läs också" i andra artiklar (`js/relaterat.js`). Ange gärna `marken` (t.ex. ["Volvo","Polestar"]) och `amnen` (t.ex. ["elbil","SUV","Kina"]) för varje artikel – rutan visar då de mest närliggande först: samma märke ger 3 poäng, samma ämne 1, samma kategori 1, lika poäng ger nyast först. Saknas `marken` letas kända märken upp i rubrik och ingress. Ny artikelsida behöver `<div class="relaterat" id="relaterat"></div>` efter `.slut` och `<script src="/js/relaterat.js" defer></script>`.
 
 ## Google (SEO)
 

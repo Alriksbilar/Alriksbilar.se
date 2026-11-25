@@ -7,7 +7,17 @@
       "datum": "2026-11-24",
       "kategori": "Reportage",
       "bild": "/img/artiklar/geely-volvo-utveckling/hero.jpg",
-      "film": "Qc3qY4LhLfI"
+      "film": "Qc3qY4LhLfI",
+      "marken": [
+        "Volvo",
+        "Geely",
+        "Polestar"
+      ],
+      "amnen": [
+        "Kina",
+        "bilindustri",
+        "Sverige"
+      ]
     },
     {
       "slug": "polestar-4-suv-provkorning",
@@ -16,7 +26,17 @@
       "datum": "2026-11-22",
       "kategori": "Provkörning",
       "bild": "/img/artiklar/polestar-4-suv-provkorning/hero.jpg",
-      "film": "nmMtp42GbnA"
+      "film": "nmMtp42GbnA",
+      "marken": [
+        "Polestar",
+        "Volvo",
+        "Geely"
+      ],
+      "amnen": [
+        "elbil",
+        "SUV",
+        "privatleasing"
+      ]
     },
     {
       "slug": "basta-vinterdacken-2026",
@@ -24,7 +44,13 @@
       "ingress": "”Tro inte att det är sommar!” Vinnarna i årets stora vinterdäckstester – och vilka däck som ger mest säkerhet för pengarna.",
       "datum": "2026-11-19",
       "kategori": "Däckguide",
-      "bild": "/img/artiklar/basta-vinterdacken-2026/puff.jpg"
+      "bild": "/img/artiklar/basta-vinterdacken-2026/puff.jpg",
+      "marken": [],
+      "amnen": [
+        "däck",
+        "vinter",
+        "säkerhet"
+      ]
     },
     {
       "slug": "bmw-i3-provkorning",
@@ -33,7 +59,14 @@
       "datum": "2026-11-18",
       "kategori": "Provkörning",
       "bild": "/img/artiklar/bmw-i3-provkorning/hero.jpg",
-      "film": "kgqrWRnAudM"
+      "film": "kgqrWRnAudM",
+      "marken": [
+        "BMW"
+      ],
+      "amnen": [
+        "elbil",
+        "sedan"
+      ]
     },
     {
       "slug": "trippeltest-ex60-ix3-glc",
@@ -42,7 +75,18 @@
       "datum": "2026-11-18",
       "kategori": "Trippeltest",
       "bild": "/img/artiklar/trippeltest-ex60-ix3-glc/hero.jpg",
-      "film": "L15B6xIQD_A"
+      "film": "L15B6xIQD_A",
+      "marken": [
+        "Volvo",
+        "BMW",
+        "Mercedes"
+      ],
+      "amnen": [
+        "elbil",
+        "SUV",
+        "premium",
+        "privatleasing"
+      ]
     },
     {
       "slug": "trippeltest-laddhybrider",
@@ -51,7 +95,17 @@
       "datum": "2026-11-18",
       "kategori": "Trippeltest",
       "bild": "/img/artiklar/trippeltest-laddhybrider/tre-framifran.jpg",
-      "film": "Fh7CuwugaUI"
+      "film": "Fh7CuwugaUI",
+      "marken": [
+        "Skoda",
+        "Toyota",
+        "Leapmotor"
+      ],
+      "amnen": [
+        "laddhybrid",
+        "SUV",
+        "Kina"
+      ]
     },
     {
       "slug": "bmw-m3-elektrisk",
@@ -60,7 +114,14 @@
       "datum": "2026-11-18",
       "kategori": "Provkörning",
       "bild": "/img/hero-bmw-m3.jpg",
-      "film": "1LvfhAcv5iY"
+      "film": "1LvfhAcv5iY",
+      "marken": [
+        "BMW"
+      ],
+      "amnen": [
+        "elbil",
+        "sportbil"
+      ]
     }
   ]
 }
