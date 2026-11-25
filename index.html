@@ -163,7 +163,8 @@
   .puff-ok input{accent-color:var(--black);width:16px;height:16px}
   .puff .puff-msg{font-weight:800;color:var(--teal-dark);min-height:0}
   /* Shorts */
-  .shorts-wrap{margin-top:44px}
+  .shorts-wrap{margin-top:0}
+  .klipp{padding-top:10px}
   .shorts{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
   .short{all:unset;cursor:pointer;flex:0 0 168px;scroll-snap-align:start}
   .short .st{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:repeating-linear-gradient(115deg,var(--teal) 0 46px,var(--black) 46px 60px,var(--yellow) 60px 64px,var(--teal) 64px 120px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
@@ -460,7 +461,12 @@
   .senart b{font-size:1rem;line-height:1.25}
   .senart .pil{margin-left:auto;font-weight:800;color:var(--teal);padding-right:8px;white-space:nowrap}
   .senart[hidden]{display:none}
-  @media (max-width:520px){.senart img{width:84px}.senart .pil{display:none}}
+  .senart-fler{display:grid;gap:8px;margin-top:8px}
+  .senart-fler[hidden]{display:none}
+  .senart.liten{margin-top:0;padding:6px;gap:12px}
+  .senart.liten img{width:92px}
+  .senart.liten b{font-size:.92rem}
+  @media (max-width:520px){.senart img{width:84px}.senart.liten img{width:72px}.senart .pil{display:none}}
 </style>
 <script type="application/ld+json" id="seo-data">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://alriksbilar.se/#webbplats", "url": "https://alriksbilar.se/", "name": "Alriks Bilar", "inLanguage": "sv-SE", "publisher": {"@id": "https://alriksbilar.se/#kanal"}}, {"@type": "Organization", "@id": "https://alriksbilar.se/#kanal", "name": "Alriks Bilar", "url": "https://alriksbilar.se/", "logo": {"@type": "ImageObject", "url": "https://alriksbilar.se/img/logo-alriks-bilar.png"}, "founder": {"@id": "https://alriksbilar.se/#alrik"}, "sameAs": ["https://www.youtube.com/@alriksbilar", "https://www.youtube.com/@AlriksCars", "https://www.instagram.com/alriksoderlind"]}, {"@type": "Person", "@id": "https://alriksbilar.se/#alrik", "name": "Alrik Söderlind", "url": "https://alriksbilar.se/", "image": "https://alriksbilar.se/img/bakom-kameran.jpg", "jobTitle": "Bilskribent och youtubare", "description": "Bilskribent sedan 1980-talet: biltestare på Teknikens Värld och 30 år på auto motor & sport, varav 25 som chefredaktör. Driver sedan 2024 YouTube-kanalen Alriks Bilar.", "sameAs": ["https://www.youtube.com/@alriksbilar", "https://www.youtube.com/@AlriksCars", "https://www.instagram.com/alriksoderlind", "https://www.linkedin.com/in/alrik-s%C3%B6derlind-9759b028/"]}]}</script>
 </head>
@@ -508,6 +514,7 @@
         <a class="btn yellow" href="https://www.youtube.com/@alriksbilar?sub_confirmation=1" target="_blank" rel="noopener">▶ Prenumerera</a>
       </div>
       <a class="senart" id="senArt" hidden></a>
+      <div class="senart-fler" id="senArtFler" hidden></div>
     </div>
 
     <aside class="telegram" id="nyheter" aria-label="Dagens bilnyheter">
@@ -527,6 +534,28 @@
     </div>
     <div class="films" id="films"></div>
 
+  </div>
+</section>
+
+<!-- ARTIKLAR -->
+<section class="artiklar" id="artiklar" hidden>
+  <div class="wrap">
+    <div class="art-head"><div><div class="kicker">Läs</div><h2>Fler artiklar</h2></div><a href="/artiklar/">Alla artiklar →</a></div>
+    <div class="art-lista" id="artLista"></div>
+  </div>
+</section>
+
+<!-- VECKANS NYA BIL (veckansbil.json, uppdateras på onsdagar utan publicering) -->
+<section class="vbil" id="veckansbil" hidden>
+  <div class="wrap">
+    <div class="art-head"><div><div class="kicker" id="vbilKicker">Varje onsdag</div><h2>Veckans nya bil</h2></div></div>
+    <article class="vbil-kort" id="vbilKort"></article>
+  </div>
+</section>
+
+<!-- SHORTS, ARKIV OCH ALRIKS CARS -->
+<section class="klipp" id="klipp">
+  <div class="wrap">
     <div class="shorts-wrap" id="shortsWrap" hidden>
       <div class="head-row">
         <div><div class="kicker">Snabba klipp</div><h2>Shorts</h2></div>
@@ -554,22 +583,10 @@
   </div>
 </section>
 
-<!-- VECKANS NYA BIL (veckansbil.json, uppdateras på onsdagar utan publicering) -->
-<section class="vbil" id="veckansbil" hidden>
-  <div class="wrap">
-    <div class="art-head"><div><div class="kicker" id="vbilKicker">Varje onsdag</div><h2>Veckans nya bil</h2></div></div>
-    <article class="vbil-kort" id="vbilKort"></article>
-  </div>
-</section>
+
 
 <!-- TOPPLISTOR + SPELLISTOR -->
-<!-- ARTIKLAR -->
-<section class="artiklar" id="artiklar" hidden>
-  <div class="wrap">
-    <div class="art-head"><div><div class="kicker">Läs</div><h2>Fler artiklar</h2></div><a href="/artiklar/">Alla artiklar →</a></div>
-    <div class="art-lista" id="artLista"></div>
-  </div>
-</section>
+
 
 <section class="topp" id="topp" hidden>
   <div class="wrap">
@@ -1113,7 +1130,12 @@ fetch('/artiklar.json').then(r => r.json()).then(d => {
   sa.href = `/artiklar/${esc(f.slug)}/`;
   sa.innerHTML = `<img src="${esc(f.bild)}" alt="" loading="lazy"><span><small>Senaste artikeln · ${esc(f.kategori)}</small><b>${esc(f.rubrik)}</b></span><span class="pil">Läs →</span>`;
   sa.hidden = false;
-  const a = all.slice(1, 5);
+  const fler = all.slice(1, 3), sf = document.getElementById('senArtFler');
+  if (fler.length) {
+    sf.innerHTML = fler.map(x => `<a class="senart liten" href="/artiklar/${esc(x.slug)}/"><img src="${esc(x.bild)}" alt="" loading="lazy"><span><small>${dat(x)} · ${esc(x.kategori)}</small><b>${esc(x.rubrik)}</b></span><span class="pil">Läs →</span></a>`).join('');
+    sf.hidden = false;
+  }
+  const a = all.slice(3, 7);
   if (!a.length) return;
   document.getElementById('artLista').innerHTML = a.map(x => `
     <a class="art-kort" href="/artiklar/${esc(x.slug)}/">
