@@ -1,6 +1,29 @@
 {
   "artiklar": [
     {
+      "slug": "vanta-med-ny-elbil",
+      "rubrik": "Vänta med nya elbilen – tre skäl att ha is i magen",
+      "ingress": "Bensinen och dieseln blir dyrare, och elbilarna har aldrig varit bättre. Ändå säger vi samma sak: köp inte en ny elbil just nu. Men en begagnad?",
+      "datum": "2026-11-30",
+      "kategori": "Analys",
+      "bild": "/img/artiklar/vanta-med-ny-elbil/hero.jpg",
+      "film": "scT54l9eNxw",
+      "marken": [
+        "Volkswagen",
+        "Renault",
+        "Citroën",
+        "Peugeot",
+        "Alfa Romeo",
+        "Li Auto"
+      ],
+      "amnen": [
+        "elbil",
+        "privatleasing",
+        "begagnat",
+        "elbilspremie"
+      ]
+    },
+    {
       "slug": "geely-volvo-utveckling",
       "rubrik": "Halva priset, halva tiden – är Volvo kört i Sverige?",
       "ingress": "8 000 ingenjörer och över hundra bilprojekt samtidigt. Jag var hos Geely utanför Shanghai – och en fråga har inte släppt mig sedan dess.",
