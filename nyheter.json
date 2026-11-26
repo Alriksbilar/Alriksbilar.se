@@ -1,32 +1,32 @@
 {
-  "uppdaterad": "2026-11-25",
+  "uppdaterad": "2026-11-26",
   "nyheter": [
     {
-      "rubrik": "Bensinen under 15 kronor – första gången sedan augusti",
-      "betyder": "Bensinen kostar nu 14,99 kr litern och dieseln 19,99 kr, efter andra sänkningen i rad. Dagens sänkning på 15 öre är värd ungefär 150 kr om året för den som tankar 1 000 liter.",
+      "rubrik": "1 500 färre bilar i veckan – nu kommer de första varslen",
+      "betyder": "Bygget av EX60, XC60 och XC90 ligger runt 4 500 bilar i veckan mot planerade 6 000, och underleverantörer har börjat varsla. Den som väntar på en nybeställd Volvo kan få räkna med fortsatt långa leveranstider.",
       "kalla": "Carup",
-      "url": "https://carup.se/nytt-besked-i-dag-branslepriset-rasar-under-dromgrans/",
+      "url": "https://carup.se/volvos-skracksiffra-skakar-goteborg-flera-varsel-hotar/",
+      "datum": "2026-11-26"
+    },
+    {
+      "rubrik": "Nätjätten som sålt allt utom bilar – nu kommer de till Europa",
+      "betyder": "Amazon Autos startar i Storbritannien i början av 2027, med Hyundai som första märke. Priset sätts fortfarande av handlaren, men det blir lättare att jämföra modeller, priser och inbytesvärde – kommer tjänsten hit kan det bli lättare att pressa priset.",
+      "kalla": "Carup",
+      "url": "https://carup.se/amazons-nya-drag-borjar-salja-nya-bilar-i-europa/",
+      "datum": "2026-11-26"
+    },
+    {
+      "rubrik": "Elpriset tredubblas i norr – så mycket dyrare blir laddningen",
+      "betyder": "Spotpriset ligger i dag på runt 3 kronor per kWh i hela landet. En laddning på 60 kWh kostar då 223–250 kronor i bara el, så den som kan vänta med att ladda till en billigare dag sparar pengar.",
+      "kalla": "Carup",
+      "url": "https://carup.se/elchock-slar-till-i-hela-sverige-svindyr-el-i-morgon/",
       "datum": "2026-11-25"
     },
     {
-      "rubrik": "Polestar förlorar 287 000 kronor på varje bil den säljer",
-      "betyder": "Förlusten blev fyra miljarder kronor på tre månader, och kassan har nästan halverats sedan årsskiftet. Polestar behöver nya pengar igen, och det är ett frågetecken för den som funderar på andrahandsvärdet.",
-      "kalla": "Carup",
-      "url": "https://carup.se/ny-miljardsmall-for-polestar-bloder-287-000-kr-per-elbil/",
-      "datum": "2026-11-25"
-    },
-    {
-      "rubrik": "Kinas hetaste elbilsmärke vintertestar i Arjeplog – säljstart i Europa 2027",
-      "betyder": "Xiaomis SU7 och SUV:n YU7 ska testas i Sverige inför Europalanseringen. YU7 siktar rakt på Tesla Model Y, och fler konkurrenter brukar betyda pressade priser för köparna.",
-      "kalla": "Carup",
-      "url": "https://carup.se/elbilen-xiaomi-till-sverige-vintertestas-i-norrland/",
-      "datum": "2026-11-25"
-    },
-    {
-      "rubrik": "Nästan var tredje ny bil i EU är nu en elbil",
-      "betyder": "Elbilarnas andel i EU är nära 30 procent, och i Danmark ökade elbilsförsäljningen med 41 procent i oktober. När fler elbilar säljs i Europa kommer det också fler begagnade elbilar på marknaden om några år, och det pressar priserna.",
-      "kalla": "electrive",
-      "url": "https://www.electrive.com/2026/11/24/acea-battery-electric-cars-capture-30-per-cent-of-eu-passenger-car-market/",
+      "rubrik": "Tak för importerade hybrider – när kvoten är full blir det stopp",
+      "betyder": "Från 1 december till 18 juni 2027 får EU bara ta in 191 780 hybrider från Kina, och även import från bland annat Japan och Sydkorea begränsas. Det kan ge längre leveranstider och högre priser på importerade hybrider, medan bilar byggda i EU inte berörs.",
+      "kalla": "Vi Bilägare",
+      "url": "https://www.vibilagare.se/nyheter/eu-infor-importtak-hybrider-kan-ge-hogre-priser",
       "datum": "2026-11-24"
     }
   ]
