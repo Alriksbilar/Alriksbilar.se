@@ -1,144 +1,164 @@
 {
- "artiklar": [
-  {
-   "slug": "xc60-provkorning",
-   "rubrik": "Nya Volvo XC60 – 100 000 kronor dyrare. Är den värd det?",
-   "ingress": "Nästan 20 mil på el, men ingen snabbladdning – och elbilen EX60 kostar ungefär lika mycket. Jag har kört nya XC60 och räknat på allt.",
-   "datum": "2026-11-27",
-   "kategori": "Provkörning",
-   "bild": "/img/artiklar/xc60-provkorning/hero.jpg",
-   "film": "MrsImOr8-YY",
-   "marken": [
-    "Volvo"
-   ],
-   "amnen": [
-    "laddhybrid",
-    "SUV",
-    "elbil"
-   ]
-  },
-  {
-   "slug": "geely-volvo-utveckling",
-   "rubrik": "Halva priset, halva tiden – är Volvo kört i Sverige?",
-   "ingress": "8 000 ingenjörer och över hundra bilprojekt samtidigt. Jag var hos Geely utanför Shanghai – och en fråga har inte släppt mig sedan dess.",
-   "datum": "2026-11-24",
-   "kategori": "Reportage",
-   "bild": "/img/artiklar/geely-volvo-utveckling/hero.jpg",
-   "film": "Qc3qY4LhLfI",
-   "marken": [
-    "Volvo",
-    "Geely",
-    "Polestar"
-   ],
-   "amnen": [
-    "Kina",
-    "bilindustri",
-    "Sverige"
-   ]
-  },
-  {
-   "slug": "polestar-4-suv-provkorning",
-   "rubrik": "Polestar 4 SUV – vänta på Volvo eller ta den här nu?",
-   "ingress": "Äkta bakruta, längre tak och rails – och 55 000 kronor billigare än Volvo EX60. Dessutom kan den levereras nu. Räcker det?",
-   "datum": "2026-11-22",
-   "kategori": "Provkörning",
-   "bild": "/img/artiklar/polestar-4-suv-provkorning/hero.jpg",
-   "film": "nmMtp42GbnA",
-   "marken": [
-    "Polestar",
-    "Volvo",
-    "Geely"
-   ],
-   "amnen": [
-    "elbil",
-    "SUV",
-    "privatleasing"
-   ]
-  },
-  {
-   "slug": "basta-vinterdacken-2026",
-   "rubrik": "Bästa vinterdäcken 2026 – så sa testerna",
-   "ingress": "”Tro inte att det är sommar!” Vinnarna i årets stora vinterdäckstester – och vilka däck som ger mest säkerhet för pengarna.",
-   "datum": "2026-11-19",
-   "kategori": "Däckguide",
-   "bild": "/img/artiklar/basta-vinterdacken-2026/puff.jpg",
-   "marken": [],
-   "amnen": [
-    "däck",
-    "vinter",
-    "säkerhet"
-   ]
-  },
-  {
-   "slug": "bmw-i3-provkorning",
-   "rubrik": "Nya BMW i3 – mer BMW än bensinbilen?",
-   "ingress": "40 mil längre räckvidd än i4 M50 och dubbla laddeffekten. Jag körde också bensinsyskonet M350 – och blev överraskad.",
-   "datum": "2026-11-18",
-   "kategori": "Provkörning",
-   "bild": "/img/artiklar/bmw-i3-provkorning/hero.jpg",
-   "film": "kgqrWRnAudM",
-   "marken": [
-    "BMW"
-   ],
-   "amnen": [
-    "elbil",
-    "sedan"
-   ]
-  },
-  {
-   "slug": "trippeltest-ex60-ix3-glc",
-   "rubrik": "Trippeltest: Volvo EX60 mot BMW iX3 och Mercedes GLC",
-   "ingress": "Tre nya premiumelbilar i sex ronder. Volvo laddar snabbast och åker skönast – men räckvidden avgör.",
-   "datum": "2026-11-18",
-   "kategori": "Trippeltest",
-   "bild": "/img/artiklar/trippeltest-ex60-ix3-glc/hero.jpg",
-   "film": "L15B6xIQD_A",
-   "marken": [
-    "Volvo",
-    "BMW",
-    "Mercedes"
-   ],
-   "amnen": [
-    "elbil",
-    "SUV",
-    "premium",
-    "privatleasing"
-   ]
-  },
-  {
-   "slug": "trippeltest-laddhybrider",
-   "rubrik": "Trippeltest: Skoda Kodiaq mot Toyota RAV4 och Leapmotor C10",
-   "ingress": "Tre superladdhybrider som går 11–14 mil på el möts i sex ronder. En vinner med bred marginal – men är en elbil ändå billigare?",
-   "datum": "2026-11-18",
-   "kategori": "Trippeltest",
-   "bild": "/img/artiklar/trippeltest-laddhybrider/tre-framifran.jpg",
-   "film": "Fh7CuwugaUI",
-   "marken": [
-    "Skoda",
-    "Toyota",
-    "Leapmotor"
-   ],
-   "amnen": [
-    "laddhybrid",
-    "SUV",
-    "Kina"
-   ]
-  },
-  {
-   "slug": "bmw-m3-elektrisk",
-   "rubrik": "En äkta M3 – utan bensin?",
-   "ingress": "850 hk, fyra elmotorer och snabbare än bensin-M3:an runt banan. Jag har kört nya eldrivna M3 – 40 år efter den första.",
-   "datum": "2026-11-18",
-   "kategori": "Provkörning",
-   "bild": "/img/hero-bmw-m3.jpg",
-   "film": "1LvfhAcv5iY",
-   "marken": [
-    "BMW"
-   ],
-   "amnen": [
-    "elbil",
-    "sportbil"
-   ]
-  }
- ]
+  "artiklar": [
+    {
+      "slug": "xc60-provkorning",
+      "rubrik": "Nya Volvo XC60 – 100 000 kronor dyrare. Är den värd det?",
+      "ingress": "Nästan 20 mil på el, men ingen snabbladdning – och elbilen EX60 kostar ungefär lika mycket. Jag har kört nya XC60 och räknat på allt.",
+      "datum": "2026-11-27",
+      "kategori": "Provkörning",
+      "bild": "/img/artiklar/xc60-provkorning/hero.jpg",
+      "film": "MrsImOr8-YY",
+      "marken": [
+        "Volvo"
+      ],
+      "amnen": [
+        "laddhybrid",
+        "SUV",
+        "elbil"
+      ]
+    },
+    {
+      "slug": "volvo-ex40-provkorning",
+      "rubrik": "Sveriges mest sålda bil – men jag skulle aldrig köpa den",
+      "ingress": "Ny skärm, nya sensorer, nytt ansikte – och samma plattform som 2017. Ändå skulle jag aldrig köpa en. Vem har räknat fel – jag eller svenska folket?",
+      "datum": "2026-11-28",
+      "kategori": "Provkörning",
+      "bild": "/img/artiklar/volvo-ex40-provkorning/hero.jpg",
+      "film": "2LkkcTmTKh4",
+      "marken": [
+        "Volvo",
+        "Xpeng",
+        "Mercedes",
+        "BMW"
+      ],
+      "amnen": [
+        "elbil",
+        "SUV",
+        "privatleasing"
+      ]
+    },
+    {
+      "slug": "geely-volvo-utveckling",
+      "rubrik": "Halva priset, halva tiden – är Volvo kört i Sverige?",
+      "ingress": "8 000 ingenjörer och över hundra bilprojekt samtidigt. Jag var hos Geely utanför Shanghai – och en fråga har inte släppt mig sedan dess.",
+      "datum": "2026-11-24",
+      "kategori": "Reportage",
+      "bild": "/img/artiklar/geely-volvo-utveckling/hero.jpg",
+      "film": "Qc3qY4LhLfI",
+      "marken": [
+        "Volvo",
+        "Geely",
+        "Polestar"
+      ],
+      "amnen": [
+        "Kina",
+        "bilindustri",
+        "Sverige"
+      ]
+    },
+    {
+      "slug": "polestar-4-suv-provkorning",
+      "rubrik": "Polestar 4 SUV – vänta på Volvo eller ta den här nu?",
+      "ingress": "Äkta bakruta, längre tak och rails – och 55 000 kronor billigare än Volvo EX60. Dessutom kan den levereras nu. Räcker det?",
+      "datum": "2026-11-22",
+      "kategori": "Provkörning",
+      "bild": "/img/artiklar/polestar-4-suv-provkorning/hero.jpg",
+      "film": "nmMtp42GbnA",
+      "marken": [
+        "Polestar",
+        "Volvo",
+        "Geely"
+      ],
+      "amnen": [
+        "elbil",
+        "SUV",
+        "privatleasing"
+      ]
+    },
+    {
+      "slug": "basta-vinterdacken-2026",
+      "rubrik": "Bästa vinterdäcken 2026 – så sa testerna",
+      "ingress": "”Tro inte att det är sommar!” Vinnarna i årets stora vinterdäckstester – och vilka däck som ger mest säkerhet för pengarna.",
+      "datum": "2026-11-19",
+      "kategori": "Däckguide",
+      "bild": "/img/artiklar/basta-vinterdacken-2026/puff.jpg",
+      "marken": [],
+      "amnen": [
+        "däck",
+        "vinter",
+        "säkerhet"
+      ]
+    },
+    {
+      "slug": "bmw-i3-provkorning",
+      "rubrik": "Nya BMW i3 – mer BMW än bensinbilen?",
+      "ingress": "40 mil längre räckvidd än i4 M50 och dubbla laddeffekten. Jag körde också bensinsyskonet M350 – och blev överraskad.",
+      "datum": "2026-11-18",
+      "kategori": "Provkörning",
+      "bild": "/img/artiklar/bmw-i3-provkorning/hero.jpg",
+      "film": "kgqrWRnAudM",
+      "marken": [
+        "BMW"
+      ],
+      "amnen": [
+        "elbil",
+        "sedan"
+      ]
+    },
+    {
+      "slug": "trippeltest-ex60-ix3-glc",
+      "rubrik": "Trippeltest: Volvo EX60 mot BMW iX3 och Mercedes GLC",
+      "ingress": "Tre nya premiumelbilar i sex ronder. Volvo laddar snabbast och åker skönast – men räckvidden avgör.",
+      "datum": "2026-11-18",
+      "kategori": "Trippeltest",
+      "bild": "/img/artiklar/trippeltest-ex60-ix3-glc/hero.jpg",
+      "film": "L15B6xIQD_A",
+      "marken": [
+        "Volvo",
+        "BMW",
+        "Mercedes"
+      ],
+      "amnen": [
+        "elbil",
+        "SUV",
+        "premium",
+        "privatleasing"
+      ]
+    },
+    {
+      "slug": "trippeltest-laddhybrider",
+      "rubrik": "Trippeltest: Skoda Kodiaq mot Toyota RAV4 och Leapmotor C10",
+      "ingress": "Tre superladdhybrider som går 11–14 mil på el möts i sex ronder. En vinner med bred marginal – men är en elbil ändå billigare?",
+      "datum": "2026-11-18",
+      "kategori": "Trippeltest",
+      "bild": "/img/artiklar/trippeltest-laddhybrider/tre-framifran.jpg",
+      "film": "Fh7CuwugaUI",
+      "marken": [
+        "Skoda",
+        "Toyota",
+        "Leapmotor"
+      ],
+      "amnen": [
+        "laddhybrid",
+        "SUV",
+        "Kina"
+      ]
+    },
+    {
+      "slug": "bmw-m3-elektrisk",
+      "rubrik": "En äkta M3 – utan bensin?",
+      "ingress": "850 hk, fyra elmotorer och snabbare än bensin-M3:an runt banan. Jag har kört nya eldrivna M3 – 40 år efter den första.",
+      "datum": "2026-11-18",
+      "kategori": "Provkörning",
+      "bild": "/img/hero-bmw-m3.jpg",
+      "film": "1LvfhAcv5iY",
+      "marken": [
+        "BMW"
+      ],
+      "amnen": [
+        "elbil",
+        "sportbil"
+      ]
+    }
+  ]
 }
