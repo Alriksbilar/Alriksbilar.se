@@ -1181,6 +1181,7 @@ hamtaInnehall('podd').then(r => r.json()).then(p => {
       <div class="t">${esc(s.titel)}</div>
       ${s.text ? `<p>${esc(s.text)}</p>` : ''}
       <a class="btn yellow" href="${esc(s.url)}" target="_blank" rel="noopener">▶ Lyssna</a>
+      ${s.sida ? `<a class="btn line" style="color:#fff;margin-left:8px" href="${esc(s.sida)}">Läs sammanfattningen</a>` : ''}
     </div>
     <ul class="ep-older">${aldre.map(a => `<li><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.titel)}</a><span>${fmtKort(a.datum)} · ${esc(a.langd)}</span></li>`).join('')}</ul>
     <a class="all" href="${esc(p.showUrl)}" target="_blank" rel="noopener">Alla avsnitt på Spotify →</a>`;
