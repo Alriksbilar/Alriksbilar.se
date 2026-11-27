@@ -1,33 +1,33 @@
 {
-  "uppdaterad": "2026-11-26",
+  "uppdaterad": "2026-11-27",
   "nyheter": [
     {
-      "rubrik": "1 500 färre bilar i veckan – nu kommer de första varslen",
-      "betyder": "Bygget av EX60, XC60 och XC90 ligger runt 4 500 bilar i veckan mot planerade 6 000, och underleverantörer har börjat varsla. Den som väntar på en nybeställd Volvo kan få räkna med fortsatt långa leveranstider.",
+      "rubrik": "Däcken klarar kraven på en bil men inte på nästa – koll före tisdag",
+      "betyder": "Vinterdäckskravet gäller från 1 december med minst 3 mm mönsterdjup, men för tyngre fordon som husbilar över 3,5 ton krävs 5 mm. Däck märkta bara M+S godkänns inte längre, så den som köper begagnade vinterdäck bör kolla snöflingesymbolen innan pengarna byter ägare.",
       "kalla": "Carup",
-      "url": "https://carup.se/volvos-skracksiffra-skakar-goteborg-flera-varsel-hotar/",
+      "url": "https://carup.se/fallan-lagliga-vinterdack-ar-olagliga-pa-en-annan-bil/",
+      "datum": "2026-11-27"
+    },
+    {
+      "rubrik": "Ny elbil i butik – men en viktig säkerhetsfunktion kan tystna om ett år",
+      "betyder": "Nödlarmet eCall i nya Toyota bZ4X riskerar att sluta fungera när Telia stänger sitt sista 2G-nät i slutet av 2027, och någon lösning finns ännu inte. Fråga säljaren hur bilens uppkopplade funktioner klarar nätbytet – i ett liknande fall fick en Peugeot-köpare tillbaka 162 700 kronor.",
+      "kalla": "Carup",
+      "url": "https://carup.se/saljer-helt-ny-elbil-nodlarmet-kan-slockna-nasta-ar/",
       "datum": "2026-11-26"
     },
     {
-      "rubrik": "Nätjätten som sålt allt utom bilar – nu kommer de till Europa",
-      "betyder": "Amazon Autos startar i Storbritannien i början av 2027, med Hyundai som första märke. Priset sätts fortfarande av handlaren, men det blir lättare att jämföra modeller, priser och inbytesvärde – kommer tjänsten hit kan det bli lättare att pressa priset.",
+      "rubrik": "Stor bilhandlare släpper kinesiskt bilmärke vid årsskiftet",
+      "betyder": "Hedin slutar sälja nya BYD-personbilar från årsskiftet men sköter service under en övergångsperiod. Garantier och redan lagda beställningar påverkas inte, men färre återförsäljare kan betyda längre väg till närmaste handlare.",
       "kalla": "Carup",
-      "url": "https://carup.se/amazons-nya-drag-borjar-salja-nya-bilar-i-europa/",
+      "url": "https://carup.se/hedin-bil-slutar-salja-stort-bilmarke-det-stammer/",
       "datum": "2026-11-26"
     },
     {
-      "rubrik": "Elpriset nästan tredubblas i norr – så mycket dyrare blir laddningen",
-      "betyder": "Spotpriset ligger i dag på runt 3 kronor per kWh i hela landet. En laddning på 60 kWh kostar då 223–250 kronor i bara el, så den som kan vänta med att ladda till en billigare dag sparar pengar.",
-      "kalla": "Carup",
-      "url": "https://carup.se/elchock-slar-till-i-hela-sverige-svindyr-el-i-morgon/",
-      "datum": "2026-11-25"
-    },
-    {
-      "rubrik": "Tak för importerade hybrider – när kvoten är full blir det stopp",
-      "betyder": "Från 1 december till 18 juni 2027 får EU bara ta in 191 780 hybrider från Kina, och även import från bland annat Japan och Sydkorea begränsas. Det kan ge längre leveranstider och högre priser på importerade hybrider, medan bilar byggda i EU inte berörs.",
-      "kalla": "Vi Bilägare",
-      "url": "https://www.vibilagare.se/nyheter/eu-infor-importtak-hybrider-kan-ge-hogre-priser",
-      "datum": "2026-11-24"
+      "rubrik": "Fler bilar levererade – men förlusten växer ändå",
+      "betyder": "Polestar levererade 14 371 bilar under tredje kvartalet, en ökning med 1 procent, men intäkterna föll 14 procent och förlusten blev 403 miljoner dollar. Hård prispress gynnar köparen här och nu, men kan också slå mot andrahandsvärdet på bilarna.",
+      "kalla": "Just Auto",
+      "url": "https://www.just-auto.com/news/polestar-q3-loss-widens/",
+      "datum": "2026-11-26"
     }
   ]
 }
