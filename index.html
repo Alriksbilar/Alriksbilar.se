@@ -523,7 +523,7 @@
     </div>
 
     <aside class="telegram" id="nyheter" aria-label="Dagens bilnyheter">
-      <div class="tg-head"><b>Bilnytt</b><span id="tgDate">—</span></div>
+      <div class="tg-head"><b id="tgTitle">Bilnytt</b><span id="tgDate">—</span></div>
       <ul class="tg" id="news"><li class="d">Laddar …</li></ul>
       <a class="tg-leasing" id="tgLeasing" href="/privatleasing/" hidden></a>
     </aside>
@@ -1163,9 +1163,10 @@ fetch('/artiklar.json').then(r => r.json()).then(d => {
 /* ---------- Telegram: nyheter.json (uppdateras varje morgon) ---------- */
 hamtaInnehall('nyheter').then(r => r.json()).then(data => {
   document.getElementById('tgDate').textContent = fmtKort(data.uppdaterad);
+  if (data.tema) document.getElementById('tgTitle').textContent = data.tema;
   document.getElementById('news').innerHTML = data.nyheter.map(n => `
     <li>
-      <div class="d">${esc(n.kalla)}</div>
+      <div class="d">${n.land ? esc(n.land) + ' · ' : ''}${esc(n.kalla)}</div>
       <div class="r">${esc(n.rubrik)}</div>
       <div class="b"><em>Betyder</em>${esc(n.betyder)}</div>
       <div class="k"><a href="${esc(n.url)}" target="_blank" rel="noopener">Läs källan →</a></div>
