@@ -106,6 +106,14 @@
   .tg-leasing b{color:#fff}
   .tg-leasing:hover{filter:brightness(1.08)}
   .tg-leasing[hidden]{display:none}
+  .pl-puff{display:flex;align-items:center;gap:16px;margin-top:14px;padding:14px 18px;background:var(--teal);color:#fff;border-radius:12px;text-decoration:none;box-shadow:0 0 0 3px var(--yellow) inset}
+  .pl-puff .ikon{font-size:1.8rem;line-height:1;flex:none}
+  .pl-puff small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow)}
+  .pl-puff b{font-size:1.05rem;line-height:1.3;color:#fff}
+  .pl-puff .pil{margin-left:auto;font-weight:800;color:var(--yellow);white-space:nowrap}
+  .pl-puff:hover{filter:brightness(1.08)}
+  .pl-puff[hidden]{display:none}
+  @media (max-width:600px){.pl-puff .pil{display:none}}
   .tg .d{font-family:var(--mono);font-size:.7rem;color:var(--teal-dark);letter-spacing:.06em;text-transform:uppercase}
   .tg .r{font-weight:800;font-size:.98rem;line-height:1.28;color:var(--black);margin:2px 0 5px}
   .tg .b{font-size:.86rem;line-height:1.42;color:#3d3a33}
@@ -520,12 +528,12 @@
       </div>
       <a class="senart" id="senArt" hidden></a>
       <div class="senart-fler" id="senArtFler" hidden></div>
+      <a class="pl-puff" id="tgLeasing" href="/privatleasing/" hidden></a>
     </div>
 
     <aside class="telegram" id="nyheter" aria-label="Dagens bilnyheter">
       <div class="tg-head"><b id="tgTitle">Bilnytt</b><span id="tgDate">—</span></div>
       <ul class="tg" id="news"><li class="d">Laddar …</li></ul>
-      <a class="tg-leasing" id="tgLeasing" href="/privatleasing/" hidden></a>
     </aside>
   </div>
 </div>
@@ -1136,12 +1144,12 @@ fetch('/artiklar.json').then(r => r.json()).then(d => {
   sa.href = `/artiklar/${esc(f.slug)}/`;
   sa.innerHTML = `<img src="${esc(f.bild)}" alt="" loading="lazy"><span><small>Senaste artikeln · ${esc(f.kategori)}</small><b>${esc(f.rubrik)}</b></span><span class="pil">Läs →</span>`;
   sa.hidden = false;
-  const fler = all.slice(1, 3), sf = document.getElementById('senArtFler');
+  const fler = all.slice(1, 5), sf = document.getElementById('senArtFler');
   if (fler.length) {
     sf.innerHTML = fler.map(x => `<a class="senart liten" href="/artiklar/${esc(x.slug)}/"><img src="${esc(x.bild)}" alt="" loading="lazy"><span><small>${dat(x)} · ${esc(x.kategori)}</small><b>${esc(x.rubrik)}</b></span><span class="pil">Läs →</span></a>`).join('');
     sf.hidden = false;
   }
-  const a = all.slice(3, 7);
+  const a = all.slice(5, 9);
   if (!a.length) return;
   document.getElementById('artLista').innerHTML = a.map(x => `
     <a class="art-kort" href="/artiklar/${esc(x.slug)}/">
@@ -1287,7 +1295,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     const b = d.bilar.map(b => ({...b, v: verklig(b)})).sort((x, y) => x.v - y.v)[0];
     const el = document.getElementById('tgLeasing');
     const e = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    el.innerHTML = `<small>Billigast att privatleasa just nu</small><b>${e(b.marke)} ${e(b.modell)}</b> – ${Math.round(b.v).toLocaleString('sv-SE')} kr/mån på riktigt. Se hela listan →`;
+    el.innerHTML = `<span class="ikon">🔑</span><span><small>Billigast att privatleasa just nu – granskad varje vecka</small><b>${e(b.marke)} ${e(b.modell)} – ${Math.round(b.v).toLocaleString('sv-SE')} kr/mån på riktigt</b></span><span class="pil">Hela listan →</span>`;
     el.hidden = false;
   } catch {}
 })();
